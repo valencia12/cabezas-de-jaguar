@@ -8,9 +8,9 @@ WORKDIR /app
 COPY package*.json ./
 
 # Copy vite.config.json
-COPY vite.config.json ./
+COPY vite.config.js ./
 
-# Copy vite.config.json
+# Copy index file
 COPY index.html ./
 
 # Copy source project
