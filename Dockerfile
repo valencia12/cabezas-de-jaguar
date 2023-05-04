@@ -32,9 +32,7 @@ RUN rm -rf ./src
 ARG FRONTEND_PORT
 ENV port=$FRONTEND_PORT
 
-RUN echo "FRONTEND_PORT: $port"
-
 EXPOSE $port 4433
 
 # Start the application
-CMD ["npm", "run", "start", "--port", "$port"]
+CMD ["npm", "run", "start", "--port $port"]
