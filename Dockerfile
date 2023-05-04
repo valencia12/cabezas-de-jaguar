@@ -28,7 +28,7 @@ RUN npm run build
 # Remove src files
 RUN rm -rf ./src
 
-EXPOSE $FRONT_END_PORT 4433
+EXPOSE $FRONTEND_PORT 4433
 
 # Start the application
-CMD ["npm", "run", "start", "--port", "$FRONT_END_PORT"]
+CMD ["npm", "run", "start", "--port", "$FRONTEND_PORT"]
