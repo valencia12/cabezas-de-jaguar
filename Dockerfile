@@ -28,11 +28,11 @@ RUN npm run build
 # Remove src files
 RUN rm -rf ./src
 
-# Read enviroment and use in build time
+# Read environment and use in build time
 ARG FRONTEND_PORT
-ENV port=$FRONTEND_PORT
+ENV PORT=$FRONTEND_PORT
 
-EXPOSE $port 4433
+EXPOSE $PORT
 
 # Start the application
-CMD ["sh", "-c", "npm run start -- -l $port"]
+CMD ["sh", "-c", "serve -s ./dist -l $PORT"]
