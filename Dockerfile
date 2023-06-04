@@ -35,4 +35,4 @@ ENV PORT=$FRONTEND_PORT
 EXPOSE $PORT
 
 # Start the application
-CMD ["sh", "-c", "serve -s ./dist -l $PORT"]
+CMD ["sh", "-c", "npm run start -- -l $PORT"]
