@@ -22,9 +22,6 @@ COPY public ./public
 # Update to latest node version
 RUN npm i npm@latest -g
 
-# Fix esbuild 
-RUN node node_modules/esbuild/install.js
-
 # Install dependencies
 RUN npm install --verbose
 
