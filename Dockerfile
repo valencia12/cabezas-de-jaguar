@@ -19,8 +19,14 @@ COPY src ./src
 # Copy source project
 COPY public ./public
 
+# Update to latest node version
+RUN npm i npm@latest -g
+
+# Fix esbuild 
+RUN npm rebuild esbuild
+
 # Install dependencies
-RUN npm install
+RUN npm ci
 
 # Build the project
 RUN npm run build
