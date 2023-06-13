@@ -22,8 +22,11 @@ COPY public ./public
 # Update to latest node version
 RUN npm i npm@latest -g
 
+# Fix esbuild 
+RUN npm rebuild esbuild
+
 # Install dependencies
-RUN npm ci --no-bin-links
+RUN npm ci
 
 # Build the project
 RUN npm run build
