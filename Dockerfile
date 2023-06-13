@@ -23,7 +23,7 @@ COPY public ./public
 RUN npm i npm@latest -g
 
 # Install dependencies
-RUN npm ci
+RUN npm ci --no-bin-links
 
 # Build the project
 RUN npm run build
