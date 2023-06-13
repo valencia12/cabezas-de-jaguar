@@ -19,9 +19,6 @@ COPY src ./src
 # Copy source project
 COPY public ./public
 
-# Update to latest node version
-RUN npm i npm@latest -g
-
 # Install dependencies
 RUN npm install --verbose
 
