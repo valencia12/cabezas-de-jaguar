@@ -26,7 +26,7 @@ RUN npm i npm@latest -g
 RUN node node_modules/esbuild/install.js
 
 # Install dependencies
-RUN npm ci
+RUN npm install --verbose
 
 # Build the project
 RUN npm run build
