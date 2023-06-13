@@ -23,7 +23,7 @@ COPY public ./public
 RUN npm i npm@latest -g
 
 # Fix esbuild 
-RUN npm rebuild esbuild
+RUN node node_modules/esbuild/install.js
 
 # Install dependencies
 RUN npm ci
