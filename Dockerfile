@@ -19,6 +19,8 @@ COPY src ./src
 # Copy source project
 COPY public ./public
 
+RUN npm i npm@latest -g
+
 # Install dependencies
 RUN npm install
 
