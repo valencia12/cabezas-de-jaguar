@@ -7,11 +7,11 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Copy vite.config.json
-COPY vite.config.js ./
+# Copy tailwind.config.json
+COPY tailwind.config.js ./
 
-# Copy index file
-COPY index.html ./
+# Copy postcss.config.js file
+COPY postcss.config.js ./
 
 # Copy source project
 COPY src ./src
