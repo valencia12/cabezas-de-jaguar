@@ -63,12 +63,12 @@ const MarcasGrid = ({ card, coleccionAlts }) => {
                 <img
                   className="md:w-24 lg:w-60 lg:max-w-60 md:flex-1 w-full"
                   src={e.img}
-                  alt="image"
+                  alt="img"
                 />
               </div>
             );
           }
-          return <></>;
+          return <div />;
         })}
       </div>
     </div>
