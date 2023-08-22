@@ -11,7 +11,6 @@ import OpportunityItem, {
 import Footer from './components/Footer';
 import NavigationMobile from './components/NavigationMobile';
 import NavigationDesktop from './components/NavigationDesktop';
-import circleFillAccent from './assets/images/circle-fill-accent.svg';
 import redFormula from './assets/images/fede1.png';
 import logo from './assets/images/ascj.png';
 import mail from './assets/images/emailp.svg';
@@ -104,11 +103,11 @@ function App() {
             </div>
           </div>
 
-          <img
+          {/* <img
             alt="bubble"
             className="circle-fill-accent"
             src={circleFillAccent}
-          />
+          /> */}
         </section>
         <section className="formula-section flex flex-col lg:flex-row-reverse">
           <div
@@ -122,7 +121,7 @@ function App() {
               title={
                 <>
                   <span style={{}} className="md:text-6xl">
-                    ASCJ
+                    ACCJ
                   </span>
                   <br />{' '}
                   <span className="md:text-4xl">
@@ -157,10 +156,11 @@ function App() {
               <Title title="ASCJ" dark />
               <div className="mt-10 lg:mb-0 md:mx-20">
                 <p className="cp px-4">
-                  Entre otros elementos, se exhiben los dibujos científicos de
-                  las tallas prehispánicas del artista, Daniel Salazar, quien
-                  aplicó la técnica de puntillismo a base de tinta china sobre
-                  papel transparente.
+                  El Proyecto Arqueológico Cabezas de Jaguar es un esfuerzo
+                  académico y cultural fundado por el Dr. Federico Paredes Umaña
+                  que busca visibilizar el legado de los pueblos originarios del
+                  occidente y centro de El Salvador desde una perspectiva,
+                  pionera en el país, de Arqueología Social e Interculturalidad.
                 </p>
               </div>
             </section>
@@ -171,10 +171,10 @@ function App() {
                   data-aos="fade-right"
                 >
                   <b className="md:text-lg lg:text-2xl">
-                    La exposición Cabezas de Jaguar, pasado y futuro busca
-                    disminuir el ocultamiento de la tradición, la exclusión
-                    social y la vulnerabilidad del patrimonio cultural que sufre
-                    la población de El Salvador.{' '}
+                    Desde el año 2006 el proyecto ha registrado 69 monumentos de
+                    la tradición escultórica Cabeza de Jaguar en los actuales
+                    Departamentos de Santa Ana, Sonsonate, Ahuachapán y San
+                    Salvador.{' '}
                   </b>
                 </p>
                 <p
@@ -182,11 +182,13 @@ function App() {
                   data-aos="fade-right"
                 >
                   <b className="md:text-lg lg:text-2xl">
-                    At Geko Ventures we pour over 20 years of knowledge in
-                    technology,
+                    El Proyecto Arqueológico Cabezas de Jaguar es un esfuerzo
+                    académico y cultural fundado por el Dr.
                   </b>{' '}
-                  awesome contacts, keen investors, and proven business
-                  methodologies to gear up for a winning and lasting solutions.
+                  Federico Paredes Umaña que busca visibilizar el legado de los
+                  pueblos originarios del occidente y centro de El Salvador
+                  desde una perspectiva, pionera en el país, de Arqueología
+                  Social e Interculturalidad.
                 </p>
               </div>
               <div data-aos="fade" />
