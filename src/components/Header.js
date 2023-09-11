@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 import logo from '../assets/images/ascj.png';
 import icon1 from '../assets/images/icon1.svg';
 
@@ -13,11 +13,11 @@ const items = [
 const navs = [
   {
     name: 'Inicio',
-    id: '#what-we-do-section',
+    id: '/',
   },
   {
     name: 'Archivo Rojo',
-    id: '#keyprojects',
+    id: '#',
   },
 ];
 
@@ -30,9 +30,9 @@ const Header = () => (
       {navs.map((it) => (
         <div className="pt-8 pb-8 pointer nav-text">
           <span className="text-white">
-            <HashLink smooth to={it.id}>
+            <Link smooth to={it.id}>
               <span>{it.name}</span>
-            </HashLink>
+            </Link>
           </span>
         </div>
       ))}

@@ -13,19 +13,11 @@ const items = [
 const navs = [
   {
     name: 'Cabezas de Jaguar',
-    id: '#what-we-do-section',
+    id: '/',
   },
   {
     name: 'Archivo Rojo',
-    id: '#keyprojects',
-  },
-  {
-    name: 'Centro Cultural',
-    id: '#partners',
-  },
-  {
-    name: 'Quienes somos?',
-    id: '#theteam',
+    id: '/archivo',
   },
 ];
 

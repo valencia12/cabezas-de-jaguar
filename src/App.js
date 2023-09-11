@@ -1,16 +1,14 @@
 import { useEffect } from 'react';
 import Aos from 'aos';
-import { BrowserRouter } from 'react-router-dom';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { Link } from "react-router-dom";
 import { Fab } from 'react-tiny-fab';
 import Title from './components/Title';
 import Title2 from './components/Title2';
 import Footer from './components/Footer';
 import NavigationDesktop from './components/NavigationDesktop';
-import circleFillAccent from './assets/images/circle-fill-accent.svg';
 import redFormula from './assets/images/fede1.png';
-import logo from './assets/images/ascj.png';
-import RojoA from './assets/images/rojoa.png';
+
 import 'react-tiny-fab/dist/styles.css';
 import 'aos/dist/aos.css';
 import './App.css';
@@ -274,7 +272,7 @@ function App() {
         <Title
           title={
             <>
-              Archivo <br className="md:hidden" /> Rojo: Click Aqui
+              Archivo <br className="md:hidden" /> <Link to='/archivo'> Rojo: Click Aqui </Link>
             </>
           }
         />
