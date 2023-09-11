@@ -4,9 +4,8 @@ import Aos from 'aos';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import DataTable from 'react-data-table-component';
 import { fetchDataFromApi } from '../api/request';
-import NavigationMobile from '../components/NavigationMobile';
 import Footer from '../components/Footer';
-import logo from '../assets/images/logopng.png';
+import logo from '../assets/images/ascj.png';
 import Header from '../components/Header';
 
 export default function ArchivoRojo() {
@@ -521,9 +520,7 @@ export default function ArchivoRojo() {
                 </nav>
                 <div className="header-container">
                     <div className="md:flex md:justify-center">
-                        <div className="md:hidden">
-                            <NavigationMobile />
-                        </div>
+                        
                         <div
                             className="large-title-container"
                             style={{

@@ -6,7 +6,6 @@ import { Fab } from 'react-tiny-fab';
 import Title from './components/Title';
 import Title2 from './components/Title2';
 import Footer from './components/Footer';
-import NavigationMobile from './components/NavigationMobile';
 import NavigationDesktop from './components/NavigationDesktop';
 import circleFillAccent from './assets/images/circle-fill-accent.svg';
 import redFormula from './assets/images/fede1.png';
@@ -62,17 +61,12 @@ function App() {
       <section className="banner-header" alt="Bg-goventuresbuilds">
         <div className="blue-layer" />
         <nav>
-          <img
-            className="brand md:hidden"
-            alt="Logo-goventurespositive"
-            src={logo}
-          />
           <NavigationDesktop />
         </nav>
         <div className="header-container">
           <div className="md:flex md:justify-center">
             <div className="md:hidden">
-              <NavigationMobile />
+             
             </div>
             <div
               className="large-title-container"
