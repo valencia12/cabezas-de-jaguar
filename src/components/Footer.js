@@ -34,7 +34,7 @@ const Footer = () => (
       </div>
 
       <div className="flex justify-end mt-16">
-        <span className="cpy">Copyright ASCJ</span>
+        <span className="cpy">Copyright ACCJ</span>
       </div>
     </div>
   </div>

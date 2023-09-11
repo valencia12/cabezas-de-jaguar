@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Aos from 'aos';
 import Archivo from '../assets/images/archivot.png';
+import Adorno from '../assets/images/cabezas.jpeg';
 
 const OpportunityItem = ({ image, text, namestag, frame = false }) => {
   useEffect(() => {
@@ -48,7 +49,7 @@ export const OpportunityItemDesk = ({
     }}
   >
     <img
-      src={image}
+      src={Adorno}
       alt={namestag}
       className="mr-4 w-20 md:mr-8 md:w-16 lg:w-24 xl:w-28 lg:mr-24"
     />

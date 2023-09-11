@@ -1,13 +1,13 @@
 html {
   --primary-color: #485922;
-  --accent: #BCCF8F ;
+  --accent: #BCCF8F;
   background-color: #F5F5F5;
   overflow-x: hidden;
   overflow-y: visible;
 }
 
-h3{
-  color:var(--primary-color)
+h3 {
+  color: var(--primary-color)
 }
 
 .pointer {
@@ -21,7 +21,7 @@ h3{
 }
 
 .banner-header {
-  height: 100vh;
+  height:  40vh;
   background-image: url(https://gaceta.politicas.unam.mx/wp-content/uploads/2017/09/cabezasdejaguar-1024x512.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -46,15 +46,18 @@ h3{
   line-height: 1.2em;
   color: #E7E6F7;
 }
+
 .title2 {
   font-size: 1.5em;
   font-weight: bolder;
   text-align: right;
   line-height: 1.2em;
 }
-.adding-text{
+
+.adding-text {
   text-align: right !important;
 }
+
 .header-container {
   position: absolute;
   top: 0;
@@ -123,6 +126,7 @@ nav {
   display: inline-block;
   flex-direction: column;
 }
+
 .blue-title2 {
   color: var(--primary-color);
   display: inline-block;
@@ -389,6 +393,7 @@ nav {
 .team-item:nth-last-child(2):nth-child(3n + 1) {
   grid-column-end: 4;
 }
+
 @media only screen and (min-width: 320px) {
   #shape-middle {
     position: absolute;
@@ -397,6 +402,7 @@ nav {
     left: 15%;
   }
 }
+
 @media only screen and (min-width: 350px) {
   #shape-middle {
     position: absolute;
@@ -439,29 +445,32 @@ nav {
     position: relative;
   }
 }
+
 @media only screen and (min-width: 550px) {
   #shape-middle {
     position: absolute;
     width: 55%;
     top: 77%;
     left: 25%;
+  }
 }
-}
+
 @media only screen and (min-width: 600px) {
   #shape-middle {
     position: absolute;
     width: 50%;
     top: 77%;
     left: 28%;
+  }
 }
-}
+
 @media only screen and (min-width: 650px) {
   #shape-middle {
     position: absolute;
     width: 50%;
     top: 76%;
     left: 28%;
-}
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -474,6 +483,7 @@ nav {
     font-size: 2.5em;
     text-align: center;
   }
+
   .title2 {
     font-size: 2.5em;
     text-align: right;
@@ -631,31 +641,36 @@ nav {
     grid-column-end: 5;
   }
 }
+
 @media only screen and (min-width: 800px) {
   #shape-middle {
     position: absolute;
     width: 30%;
     top: 79%;
     left: 37%;
+  }
 }
-}
+
 @media only screen and (min-width: 900px) {
   #shape-middle {
     position: absolute;
     width: 30%;
     top: 77%;
     left: 37%;
+  }
 }
-}
+
 @media only screen and (min-width: 1024px) {
   .title {
     font-size: 3em;
     text-align: center;
   }
+
   .title2 {
     font-size: 3em;
     text-align: right;
   }
+
   .nav-text {
     font-size: 15px;
     margin-left: 25px;
@@ -743,14 +758,16 @@ nav {
   }
 
 }
+
 @media only screen and (min-width: 1130px) {
   #shape-middle {
     position: absolute;
     width: 25%;
     top: 76%;
     left: 39%;
+  }
 }
-}
+
 @media only screen and (min-width: 1220px) {
   .nav-text {
     font-size: 20px;
@@ -769,37 +786,40 @@ nav {
     left: 37%;
   }
 }
+
 @media only screen and (min-width: 1300px) {
   #shape-middle {
     position: absolute;
     width: 30%;
     top: 67%;
     left: 37%;
+  }
 }
-}
+
 @media only screen and (min-width: 1440px) {
   #shape-middle {
     position: absolute;
     width: 30%;
     top: 60%;
     left: 37%;
+  }
 }
-}
+
 @media only screen and (min-width: 1740px) {
   #shape-middle {
     position: absolute;
     width: 25%;
     top: 62%;
     left: 39%;
+  }
 }
-}
+
 @media only screen and (min-width: 1920px) {
   #formula-image-container img {
-    transform: scale(0.5);
     z-index: 1;
     position: absolute;
     bottom: 15%;
-    right: 11%;
+    left: 70%;
   }
 
   #shape-middle {
@@ -815,8 +835,8 @@ nav {
 }
 
 @media only screen and (min-width: 1024px) {
-  
-  .pl120{
+
+  .pl120 {
     padding-left: 3rem;
     padding-right: 5rem;
   }
@@ -908,9 +928,37 @@ nav {
     /* top: -9%; */
     bottom: 10%;
     overflow-x: unset;
-}
-.center-image {
-  position: absolute;
+  }
+
+  .center-image {
+    position: absolute;
+  }
+
 }
 
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  /* Los elementos se apilan verticalmente en dispositivos móviles */
+}
+
+.elemento {
+  flex: 1;
+  /* Los elementos ocuparán el espacio disponible en la dirección principal */
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 5px;
+}
+
+/* Estilos para dispositivos con un ancho de pantalla mayor a 768px */
+@media screen and (min-width: 768px) {
+  .contenedor {
+    flex-direction: row;
+    /* Los elementos se colocarán en fila en pantallas más anchas */
+  }
+
+  .elemento {
+    flex: 1;
+    /* Los elementos se distribuirán equitativamente en el espacio disponible */
+  }
 }
