@@ -8,17 +8,17 @@ const items = [
   'Key project',
   'Partners',
   'The Team',
-  'Ready to build? Contact us',
+  'Ready to build? Contact us'
 ];
 const navs = [
   {
     name: 'Cabezas de Jaguar',
-    id: '/',
+    id: '/'
   },
   {
     name: 'Archivo Rojo',
-    id: '/archivo',
-  },
+    id: '/archivo'
+  }
 ];
 
 const NavigationDesktop = () => (
@@ -27,11 +27,11 @@ const NavigationDesktop = () => (
       <img alt="brand" className="brand" src={logo} />
     </div>
     <div className="flex flex-row">
-      {navs.map((it) => (
-        <div className="pt-8 pb-8 pointer nav-text">
-          <span className="text-white">
-            <HashLink smooth to={it.id}>
-              <span>{it.name}</span>
+      {navs.map((it, index) => (
+        <div className="pt-8 pb-8 pointer nav-text" key={`navigation-div-${it.id}-${index}`} >
+          <span className="text-white"  key={`navigation-span-${it.id}-${index}`}>
+            <HashLink smooth="true" to={it.id}  key={`navigation-hashlink-${it.id}-${index}`}>
+              <span key={`navigation-name-${it.id}-${index}`}>{it.name}</span>
             </HashLink>
           </span>
         </div>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { HashLink } from 'react-router-hash-link';
 import Title from './Title';
 
@@ -6,15 +7,9 @@ const Footer = () => (
     <div className="flex flex-col">
       <div className="flex justify-start">
         <Title
-          title={
-            <h3
-              style={{
-                color: '#FFF',
-              }}
-            >
-              ASCJ
-            </h3>
-          }
+          title={'ACCJ'} titleStyle={{
+          color: '#FFF'
+        }}
         />
       </div>
 

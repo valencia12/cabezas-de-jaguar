@@ -15,6 +15,7 @@ const ParnertsGrid = ({ card, images, partnersAlt }) => {
           if (card) {
             return (
               <div
+                key={`partner-card-${keys}`}
                 data-aos="fade-left"
                 className="partner-item w-24 h-24 shadow-lg rounded-full flex justify-center items-center p-5 md:w-48 md:h-48 lg:w-72 lg:h-72"
                 style={{ background: '#fff', zIndex: 1 }}
@@ -29,6 +30,7 @@ const ParnertsGrid = ({ card, images, partnersAlt }) => {
           }
           return (
             <div
+              key={`image-card-${keys}`}
               data-aos="fade-left"
               className="partner-item w-28 sm:w-40 lg:w-48 xl:w-60 lg:mx-4 flex justify-center items-center"
             >

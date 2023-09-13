@@ -20,7 +20,7 @@ const Fab = ({
   alwaysShowTitle = false,
   children,
   icon,
-  mainButtonStyles,
+  mainButtonStyles
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -60,7 +60,7 @@ const Fab = ({
               'aria-label': ch.props.text || `Menu button ${i + 1}`,
               'aria-hidden': ariaHidden,
               ...ch.props,
-              onClick: () => actionOnClick(ch.props.onClick),
+              onClick: () => actionOnClick(ch.props.onClick)
             })}
             {ch.props.text && (
               <span
@@ -69,7 +69,7 @@ const Fab = ({
                 }`}
                 aria-hidden={ariaHidden}
                 style={{
-                  backgroundColor: 'red',
+                  backgroundColor: 'red'
                 }}
               >
                 {ch.props.text}

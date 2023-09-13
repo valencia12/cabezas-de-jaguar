@@ -9,498 +9,125 @@ import logo from '../assets/images/ascj.png';
 import Header from '../components/Header';
 
 export default function ArchivoRojo() {
-    const [data, setData] = useState(null);
+    const [redFiles, setRedFiles] = useState(null);
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const apiData = await fetchDataFromApi();
-                setData(apiData);
-            } catch (error) {
-                console.error('Error al obtener datos de la API:', error);
-            }
+        const fetchData = () => {
+            const searchParams = { ...searchQuery };
+            fetchDataFromApi(searchParams)
+              .then(apiData => {
+                  setRedFiles(apiData);
+              })
+              .catch(error => {
+                  console.error('Error al obtener datos de la API:', error);
+              });
         };
+        // Debounce fetchData by 500 milliseconds
+        const debounceTimer = setTimeout(fetchData, 500);
+        return () => {
+            clearTimeout(debounceTimer);
+        };
+    }, [searchQuery]);
 
-        fetchData();
-    }, []);
-
-    const rows = {
-        data: [
-            
-            {
-                reference_code: 'C10.UD261',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: '',
-                title:
-                    'Organización de  equipo de las FPL para  la conducccion del Programa de Transferencia de Tierras',
-                place_and_date: 'sin fecha',
-                content:
-                    'Recopilación de acciones y dificultades del programa de Transferencia de Tierras y otros programas dependientes según FPL',
-                precedence: 'Fuerzas Populares de Liberación "Farabundo Martí" (FPL).',
-                language: 'Español',
-                physical_characteristics: 'Estado regular',
-                volume: '16 folios',
-                notes: 'Oxidacion de papel. Oxidacion de metal. Perfotaciones. Sellado',
-                year: 'Sin fecha',
-            },
-            {
-                reference_code: 'C10.UD262',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: 'Correspondencia',
-                title: 'sin título',
-                place_and_date: 'March 20, 1995',
-                content:
-                    'Memorandum dirigido a referentes zonales sobre la recolección de información para elaborar un balance del PTT al 30 de abril y fecha de proxima reunión en la comisión de tierras',
-                precedence:
-                    'Comisión de tierras, Fuerzas Populares de Liberación "Farabundo Martí" (FPL).',
-                language: 'Español',
-                physical_characteristics: 'Estado regular',
-                volume: '1 folio',
-                notes: 'Perdida de tinta. Oxidación de metal',
-                year: '1995',
-            },
-            {
-                reference_code: 'C10.UD263',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: 'Informes',
-                title: 'Datos de becas 223',
-                place_and_date: 'sin fecha',
-                content: 'Listados de becados de becas 223',
-                precedence: 'sin productor',
-                language: 'Español',
-                physical_characteristics: 'Buen estado',
-                volume: '9 folios',
-                notes:
-                    'Documento computarizado. Anotaciones manuscritas a lápiz al margen y fuera de margen',
-                year: 'Sin fecha',
-            },
-            {
-                reference_code: 'C10.UD264',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: 'Informes',
-                title:
-                    'PRN- Programa de becas para desmovilizados del FMLN y de la FAES. Listados por partidos politicos incompletos es su documentación. Partido político: FPL (sic)',
-                place_and_date: '3 de May de 1994',
-                content:
-                    'Lista de personas con  documentación incompleta y los sustitutos  para el programa de becas',
-                precedence: 'sin productor',
-                language: 'Español',
-                physical_characteristics: 'Estado regular',
-                volume: '2 folios',
-                notes:
-                    'oxidacion de papel, oxidacion por metal, anotaciones manuscritas',
-                year: '1994',
-            },
-            {
-                reference_code: 'C10.UD261',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: '',
-                title:
-                    'Organización de  equipo de las FPL para  la conducccion del Programa de Transferencia de Tierras',
-                place_and_date: 'sin fecha',
-                content:
-                    'Recopilación de acciones y dificultades del programa de Transferencia de Tierras y otros programas dependientes según FPL',
-                precedence: 'Fuerzas Populares de Liberación "Farabundo Martí" (FPL).',
-                language: 'Español',
-                physical_characteristics: 'Estado regular',
-                volume: '16 folios',
-                notes: 'Oxidacion de papel. Oxidacion de metal. Perfotaciones. Sellado',
-                year: 'Sin fecha',
-            },
-            {
-                reference_code: 'C10.UD262',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: 'Correspondencia',
-                title: 'sin título',
-                place_and_date: 'March 20, 1995',
-                content:
-                    'Memorandum dirigido a referentes zonales sobre la recolección de información para elaborar un balance del PTT al 30 de abril y fecha de proxima reunión en la comisión de tierras',
-                precedence:
-                    'Comisión de tierras, Fuerzas Populares de Liberación "Farabundo Martí" (FPL).',
-                language: 'Español',
-                physical_characteristics: 'Estado regular',
-                volume: '1 folio',
-                notes: 'Perdida de tinta. Oxidación de metal',
-                year: '1995',
-            },
-            {
-                reference_code: 'C10.UD263',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: 'Informes',
-                title: 'Datos de becas 223',
-                place_and_date: 'sin fecha',
-                content: 'Listados de becados de becas 223',
-                precedence: 'sin productor',
-                language: 'Español',
-                physical_characteristics: 'Buen estado',
-                volume: '9 folios',
-                notes:
-                    'Documento computarizado. Anotaciones manuscritas a lápiz al margen y fuera de margen',
-                year: 'Sin fecha',
-            },
-            {
-                reference_code: 'C10.UD264',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: 'Informes',
-                title:
-                    'PRN- Programa de becas para desmovilizados del FMLN y de la FAES. Listados por partidos politicos incompletos es su documentación. Partido político: FPL (sic)',
-                place_and_date: '3 de May de 1994',
-                content:
-                    'Lista de personas con  documentación incompleta y los sustitutos  para el programa de becas',
-                precedence: 'sin productor',
-                language: 'Español',
-                physical_characteristics: 'Estado regular',
-                volume: '2 folios',
-                notes:
-                    'oxidacion de papel, oxidacion por metal, anotaciones manuscritas',
-                year: '1994',
-            },
-            {
-                reference_code: 'C10.UD261',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: '',
-                title:
-                    'Organización de  equipo de las FPL para  la conducccion del Programa de Transferencia de Tierras',
-                place_and_date: 'sin fecha',
-                content:
-                    'Recopilación de acciones y dificultades del programa de Transferencia de Tierras y otros programas dependientes según FPL',
-                precedence: 'Fuerzas Populares de Liberación "Farabundo Martí" (FPL).',
-                language: 'Español',
-                physical_characteristics: 'Estado regular',
-                volume: '16 folios',
-                notes: 'Oxidacion de papel. Oxidacion de metal. Perfotaciones. Sellado',
-                year: 'Sin fecha',
-            },
-            {
-                reference_code: 'C10.UD262',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: 'Correspondencia',
-                title: 'sin título',
-                place_and_date: 'March 20, 1995',
-                content:
-                    'Memorandum dirigido a referentes zonales sobre la recolección de información para elaborar un balance del PTT al 30 de abril y fecha de proxima reunión en la comisión de tierras',
-                precedence:
-                    'Comisión de tierras, Fuerzas Populares de Liberación "Farabundo Martí" (FPL).',
-                language: 'Español',
-                physical_characteristics: 'Estado regular',
-                volume: '1 folio',
-                notes: 'Perdida de tinta. Oxidación de metal',
-                year: '1995',
-            },
-            {
-                reference_code: 'C10.UD263',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: 'Informes',
-                title: 'Datos de becas 223',
-                place_and_date: 'sin fecha',
-                content: 'Listados de becados de becas 223',
-                precedence: 'sin productor',
-                language: 'Español',
-                physical_characteristics: 'Buen estado',
-                volume: '9 folios',
-                notes:
-                    'Documento computarizado. Anotaciones manuscritas a lápiz al margen y fuera de margen',
-                year: 'Sin fecha',
-            },
-            {
-                reference_code: 'C10.UD264',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: 'Informes',
-                title:
-                    'PRN- Programa de becas para desmovilizados del FMLN y de la FAES. Listados por partidos politicos incompletos es su documentación. Partido político: FPL (sic)',
-                place_and_date: '3 de May de 1994',
-                content:
-                    'Lista de personas con  documentación incompleta y los sustitutos  para el programa de becas',
-                precedence: 'sin productor',
-                language: 'Español',
-                physical_characteristics: 'Estado regular',
-                volume: '2 folios',
-                notes:
-                    'oxidacion de papel, oxidacion por metal, anotaciones manuscritas',
-                year: '1994',
-            },
-            {
-                reference_code: 'C10.UD261',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: '',
-                title:
-                    'Organización de  equipo de las FPL para  la conducccion del Programa de Transferencia de Tierras',
-                place_and_date: 'sin fecha',
-                content:
-                    'Recopilación de acciones y dificultades del programa de Transferencia de Tierras y otros programas dependientes según FPL',
-                precedence: 'Fuerzas Populares de Liberación "Farabundo Martí" (FPL).',
-                language: 'Español',
-                physical_characteristics: 'Estado regular',
-                volume: '16 folios',
-                notes: 'Oxidacion de papel. Oxidacion de metal. Perfotaciones. Sellado',
-                year: 'Sin fecha',
-            },
-            {
-                reference_code: 'C10.UD262',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: 'Correspondencia',
-                title: 'sin título',
-                place_and_date: 'March 20, 1995',
-                content:
-                    'Memorandum dirigido a referentes zonales sobre la recolección de información para elaborar un balance del PTT al 30 de abril y fecha de proxima reunión en la comisión de tierras',
-                precedence:
-                    'Comisión de tierras, Fuerzas Populares de Liberación "Farabundo Martí" (FPL).',
-                language: 'Español',
-                physical_characteristics: 'Estado regular',
-                volume: '1 folio',
-                notes: 'Perdida de tinta. Oxidación de metal',
-                year: '1995',
-            },
-            {
-                reference_code: 'C10.UD263',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: 'Informes',
-                title: 'Datos de becas 223',
-                place_and_date: 'sin fecha',
-                content: 'Listados de becados de becas 223',
-                precedence: 'sin productor',
-                language: 'Español',
-                physical_characteristics: 'Buen estado',
-                volume: '9 folios',
-                notes:
-                    'Documento computarizado. Anotaciones manuscritas a lápiz al margen y fuera de margen',
-                year: 'Sin fecha',
-            },
-            {
-                reference_code: 'C10.UD264',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: 'Informes',
-                title:
-                    'PRN- Programa de becas para desmovilizados del FMLN y de la FAES. Listados por partidos politicos incompletos es su documentación. Partido político: FPL (sic)',
-                place_and_date: '3 de May de 1994',
-                content:
-                    'Lista de personas con  documentación incompleta y los sustitutos  para el programa de becas',
-                precedence: 'sin productor',
-                language: 'Español',
-                physical_characteristics: 'Estado regular',
-                volume: '2 folios',
-                notes:
-                    'oxidacion de papel, oxidacion por metal, anotaciones manuscritas',
-                year: '1994',
-            },
-            ,
-            {
-                reference_code: 'C10.UD264',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: 'Informes',
-                title:
-                    'PRN- Programa de becas para desmovilizados del FMLN y de la FAES. Listados por partidos politicos incompletos es su documentación. Partido político: FPL (sic)',
-                place_and_date: '3 de May de 1994',
-                content:
-                    'Lista de personas con  documentación incompleta y los sustitutos  para el programa de becas',
-                precedence: 'sin productor',
-                language: 'Español',
-                physical_characteristics: 'Estado regular',
-                volume: '2 folios',
-                notes:
-                    'oxidacion de papel, oxidacion por metal, anotaciones manuscritas',
-                year: '1994',
-            },
-            ,
-            {
-                reference_code: 'C10.UD264',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: 'Informes',
-                title:
-                    'PRN- Programa de becas para desmovilizados del FMLN y de la FAES. Listados por partidos politicos incompletos es su documentación. Partido político: FPL (sic)',
-                place_and_date: '3 de May de 1994',
-                content:
-                    'Lista de personas con  documentación incompleta y los sustitutos  para el programa de becas',
-                precedence: 'sin productor',
-                language: 'Español',
-                physical_characteristics: 'Estado regular',
-                volume: '2 folios',
-                notes:
-                    'oxidacion de papel, oxidacion por metal, anotaciones manuscritas',
-                year: '1994',
-            },
-            ,
-            {
-                reference_code: 'C10.UD264',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: 'Informes',
-                title:
-                    'PRN- Programa de becas para desmovilizados del FMLN y de la FAES. Listados por partidos politicos incompletos es su documentación. Partido político: FPL (sic)',
-                place_and_date: '3 de May de 1994',
-                content:
-                    'Lista de personas con  documentación incompleta y los sustitutos  para el programa de becas',
-                precedence: 'sin productor',
-                language: 'Español',
-                physical_characteristics: 'Estado regular',
-                volume: '2 folios',
-                notes:
-                    'oxidacion de papel, oxidacion por metal, anotaciones manuscritas',
-                year: '1994',
-            },
-            ,
-            {
-                reference_code: 'C10.UD264',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: 'Informes',
-                title:
-                    'PRN- Programa de becas para desmovilizados del FMLN y de la FAES. Listados por partidos politicos incompletos es su documentación. Partido político: FPL (sic)',
-                place_and_date: '3 de May de 1994',
-                content:
-                    'Lista de personas con  documentación incompleta y los sustitutos  para el programa de becas',
-                precedence: 'sin productor',
-                language: 'Español',
-                physical_characteristics: 'Estado regular',
-                volume: '2 folios',
-                notes:
-                    'oxidacion de papel, oxidacion por metal, anotaciones manuscritas',
-                year: '1994',
-            },
-            ,
-            {
-                reference_code: 'C10.UD264',
-                country_code: 'SV-ACCJ',
-                institution: 'FMLN',
-                dependency: 'FPL',
-                document_type: 'Informes',
-                title:
-                    'PRN- Programa de becas para desmovilizados del FMLN y de la FAES. Listados por partidos politicos incompletos es su documentación. Partido político: FPL (sic)',
-                place_and_date: '3 de May de 1994',
-                content:
-                    'Lista de personas con  documentación incompleta y los sustitutos  para el programa de becas',
-                precedence: 'sin productor',
-                language: 'Español',
-                physical_characteristics: 'Estado regular',
-                volume: '2 folios',
-                notes:
-                    'oxidacion de papel, oxidacion por metal, anotaciones manuscritas',
-                year: '1994',
-            },
-        ],
-        page: '0',
-        totalCount: 4,
-        totalPages: 1,
-    };
     const columns = [
         {
+            id: 'reference_code',
             name: 'Codigo de referencia',
             selector: (row) => row.reference_code,
+            sortable: true
         },
         {
+            id: 'country_code',
             name: 'Codigo de pais',
             selector: (row) => row.country_code,
+            sortable: true
         },
         {
+            id: 'institution',
             name: 'Institucion',
             selector: (row) => row.institution,
+            sortable: true
         },
         {
+            id: 'dependency',
             name: 'Dependencia',
             selector: (row) => row.dependency,
+            sortable: true
         },
         {
+            id: 'document_type',
             name: 'Tipo de documento',
             selector: (row) => row.document_type,
+            sortable: true
         },
         {
+            id: 'title',
             name: 'Titulo',
             selector: (row) => row.title,
+            sortable: true
         },
         {
+            id: 'place_and_date',
             name: 'Lugar y fecha',
             selector: (row) => row.place_and_date,
+            sortable: true
         },
-        ,
         {
+            id: 'content',
             name: 'Contenido',
             selector: (row) => row.content,
+            sortable: true
         },
-        ,
         {
+            id: 'precedence',
             name: 'Precedente',
             selector: (row) => row.precedence,
+            sortable: true
         },
-        ,
         {
-            name: 'lenguage',
-            selector: (row) => row.lenguage,
+            id: 'language',
+            name: 'language',
+            selector: (row) => row.language,
+            sortable: true
         },
-        ,
         {
+            id: 'physical_characteristics',
             name: 'Caracteristicas fisicas',
             selector: (row) => row.physical_characteristics,
+            sortable: true
         },
-        ,
         {
+            id: 'volume',
             name: 'Volumen',
             selector: (row) => row.volume,
+            sortable: true
         },
-        ,
         {
+            id: 'notes',
             name: 'Notas',
             selector: (row) => row.notes,
+            sortable: true
         },
         {
+            id: 'year',
             name: 'Año',
             selector: (row) => row.year,
-        },
+            sortable: true
+        }
     ];
 
-    console.log(rows);
     const top = () => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth', // for smoothly scrolling
+            behavior: 'smooth' // for smoothly scrolling
         });
     };
     const styles = {
         backgroundColor: '#485922',
-        marginLeft: '75%',
+        marginLeft: '75%'
     };
 
-    useEffect(() => { }, []);
-    useEffect(() => {
-        Aos.init({ duration: 1200 });
-    }, []);
     return (
         <div style={{ overflowX: 'hidden' }}>
             <Fab
@@ -516,17 +143,17 @@ export default function ArchivoRojo() {
                         alt="Logo-goventurespositive"
                         src={logo}
                     />
-                    <Header />
+                    <Header/>
                 </nav>
                 <div className="header-container">
                     <div className="md:flex md:justify-center">
-                        
+
                         <div
                             className="large-title-container"
                             style={{
                                 zIndex: '300',
                                 borderRadius: '3px',
-                                opacity: '0.9',
+                                opacity: '0.9'
                             }}
                         >
                             <h3
@@ -534,7 +161,7 @@ export default function ArchivoRojo() {
                                 style={{
                                     fontSize: '1.8em',
                                     justifyContent: 'center',
-                                    color: 'white',
+                                    color: 'white'
                                 }}
                             >
                                 Archivo Rojo <br />
@@ -545,7 +172,7 @@ export default function ArchivoRojo() {
                                     display: 'flex',
                                     border: '3px solid white',
                                     borderRadius: '5px',
-                                    fontSize: '1em',
+                                    fontSize: '1em'
                                 }}
                             />
                         </div>
@@ -553,8 +180,9 @@ export default function ArchivoRojo() {
                 </div>
             </section>
             <section>
-                <DataTable columns={columns} data={rows.data} fixedHeader />
-                {/* <img className='circle-fill-primary' src={circleFillPrimary} /> */}
+                <DataTable fixedHeader={true}
+                           columns={columns}
+                           data={redFiles ? redFiles.data : []} />
             </section>
             <Footer/>
         </div>

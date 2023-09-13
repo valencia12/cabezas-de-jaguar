@@ -14,7 +14,7 @@ const OpportunityItem = ({ image, text, namestag, frame = false }) => {
         alt={namestag}
         className="ml-4 mr-4"
         style={{
-          width: '50%',
+          width: '50%'
         }}
       />
       <div
@@ -23,7 +23,7 @@ const OpportunityItem = ({ image, text, namestag, frame = false }) => {
           justifyContent: 'center',
           alignItems: 'center',
           position: 'relative',
-          overflow: 'visible',
+          overflow: 'visible'
         }}
         data-aos="fade-left"
       >
@@ -40,12 +40,12 @@ export const OpportunityItemDesk = ({
   image,
   text,
   frame = false,
-  namestag,
+  namestag
 }) => (
   <div
     className="flex flex-row justify-center"
     style={{
-      marginLeft: '20%',
+      marginLeft: '20%'
     }}
   >
     <img
@@ -59,7 +59,7 @@ export const OpportunityItemDesk = ({
         justifyContent: 'center',
         alignItems: 'center',
         position: 'relative',
-        overflow: 'visible',
+        overflow: 'visible'
       }}
     >
       {frame && <img src={Archivo} alt="archivo" className="center-image " />}

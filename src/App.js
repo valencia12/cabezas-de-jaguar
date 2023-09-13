@@ -1,7 +1,8 @@
+import React from 'react';
 import { useEffect } from 'react';
 import Aos from 'aos';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { Fab } from 'react-tiny-fab';
 import Title from './components/Title';
 import Title2 from './components/Title2';
@@ -22,27 +23,27 @@ const gridItems = [
       </>
     ),
     frame: false,
-    namestag: '',
+    namestag: ''
   },
   {
     image: '',
     text: '',
     frame: true,
-    namestag: '',
-  },
+    namestag: ''
+  }
 ];
 
 const top = () => {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth', // for smoothly scrolling
+    behavior: 'smooth' // for smoothly scrolling
   });
 };
 
 function App() {
   const styles = {
     backgroundColor: '#485922',
-    marginLeft: '75%',
+    marginLeft: '75%'
   };
 
   useEffect(() => {
@@ -71,7 +72,7 @@ function App() {
               style={{
                 zIndex: '300',
                 borderRadius: '3px',
-                opacity: '0.9',
+                opacity: '0.9'
               }}
             >
               <h3
@@ -79,7 +80,7 @@ function App() {
                 style={{
                   fontSize: '1.8em',
                   justifyContent: 'center',
-                  color: 'white',
+                  color: 'white'
                 }}
               >
                 Pasados y Futuro <br />
@@ -90,7 +91,7 @@ function App() {
                   display: 'flex',
                   border: '3px solid white',
                   borderRadius: '5px',
-                  fontSize: '1em',
+                  fontSize: '1em'
                 }}
               >
                 <h3 className="md:text-center">
@@ -98,7 +99,7 @@ function App() {
                     style={{
                       fontSize: '1.8em',
                       justifyContent: 'center',
-                      color: 'white',
+                      color: 'white'
                     }}
                   >
                     Investigaciones del dr Federico Paredes Umaña sobre el
@@ -116,12 +117,12 @@ function App() {
           data-aos="fade-left"
           className="pt-0 lg:mt-24 xl:mt-32 sizeXl"
           style={{
-            marginRight: '10%',
+            marginRight: '10%'
           }}
         >
           <div
             style={{
-              marginTop: '5em',
+              marginTop: '5em'
             }}
           >
             <Title2
@@ -195,7 +196,7 @@ function App() {
       <div className="flex flex-col-reverse md:flex-row-reverse md:justify-between md:items-center">
         <img
           style={{
-            height: '35%',
+            height: '35%'
           }}
           alt="img"
           data-aos="fade-right"
@@ -221,12 +222,12 @@ function App() {
             </>
           }
           titleStyle={{
-            fontSize: '2em',
+            fontSize: '2em'
           }}
         />
         <Title
           titleStyle={{
-            fontSize: '2em',
+            fontSize: '2em'
           }}
           title={
             <>
@@ -238,7 +239,7 @@ function App() {
           style={{
             textAlign: 'center',
             display: 'flex',
-            justifyContent: 'center',
+            justifyContent: 'center'
           }}
         >
           <ul>

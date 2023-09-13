@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect } from 'react';
 import Aos from 'aos';
 
@@ -13,13 +14,14 @@ const MarcasGrid = ({ card, coleccionAlts }) => {
             if (keys === 0) {
               return (
                 <div
+                  key={`marcas-${keys}`}
                   data-aos="fade-left"
                   className="marcas-item w-24 h-24 mx-auto shadow-lg rounded-full flex justify-center items-center p-5 md:w-40 md:h-40 lg:w-48 lg:h-48"
                   style={{ background: '#fff', zIndex: 1 }}
                 >
                   <a
                     style={{
-                      display: 'contents',
+                      display: 'contents'
                     }}
                     href={e.links}
                     rel="noopener noreferrer"
@@ -36,13 +38,14 @@ const MarcasGrid = ({ card, coleccionAlts }) => {
             }
             return (
               <div
+                key={`marcas-shadow-${keys}`}
                 data-aos="fade-left"
                 className="marcas-item w-24 h-24 mx-auto shadow-lg rounded-full flex justify-center items-center p-5 md:w-40 md:h-40 lg:w-48 lg:h-48"
                 style={{ background: '#fff', zIndex: 1 }}
               >
                 <a
                   style={{
-                    display: 'contents',
+                    display: 'contents'
                   }}
                   href={e.links}
                   rel="noopener noreferrer"
@@ -57,6 +60,7 @@ const MarcasGrid = ({ card, coleccionAlts }) => {
           if (!card) {
             return (
               <div
+                key={`marcas-center-${keys}`}
                 data-aos="fade-left"
                 className="marcas-item lg:w-60 lg:mr-4 lg:ml-4 flex justify-center items-center"
               >
@@ -68,7 +72,7 @@ const MarcasGrid = ({ card, coleccionAlts }) => {
               </div>
             );
           }
-          return <div />;
+          return <div key={`marcas-none-${keys}`} />;
         })}
       </div>
     </div>

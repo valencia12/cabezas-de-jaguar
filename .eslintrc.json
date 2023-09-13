@@ -1,19 +1,16 @@
 {
     "env": {
-        "browser": false,
-        "commonjs": true,
-        "es6": true,
-        "node": true,
-        "jest": true
+        "browser": true,
+        "es2021": true
     },
-    "globals": {"vscode": "readonly", "JSX": "readonly"},
-    
+    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:react-hooks/recommended"],
     "parserOptions": {
-        "ecmaVersion": 2020,
-        "sourceType": "module"
+        "ecmaVersion": 12,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
     },
-    "extends": "wesbos",
-    "plugins": ["jest"],
     "rules": {
         "no-const-assign": "warn",
         "no-this-before-super": "warn",
@@ -24,6 +21,19 @@
         "valid-typeof": "warn",
         "consistent-return": "off",
         "max-len": "warn",
-        "react/prop-types": 0
+        "react/prop-types": 0,
+        "spaced-comment": [2, "always"],
+        "vars-on-top": 2,
+        "no-undefined": 2,
+        "comma-dangle": [2, "never"],
+        "quotes": [2, "single"],
+        "semi": [2, "always"],
+        "guard-for-in": 2,
+        "no-eval": 2,
+        "no-with": 2,
+        "no-continue": 1,
+        "no-extra-semi": 1,
+        "no-unused-expressions": 1,
+        "react/prefer-es6-class": 1
     }
 }

@@ -10,37 +10,37 @@ const team = [
     name: 'MIGUEL MUÑOZ',
     role: 'MANAGING PARTNER',
     avatar: avatar1,
-    nametag: 'team-goventuresmiguel-munoz',
+    nametag: 'team-goventuresmiguel-munoz'
   },
   {
     name: 'FREDDY ARÉVALO',
     role: 'GENERAL PARTNER',
     avatar: avatar3,
-    nametag: 'team-goventuresfredy-arevalo',
+    nametag: 'team-goventuresfredy-arevalo'
   },
   {
     name: 'RENÉ MUÑOZ',
     role: 'GENERAL PARTNER',
     avatar: avatar4,
-    nametag: 'team-goventuresrene-munoz',
+    nametag: 'team-goventuresrene-munoz'
   },
   {
     name: 'MAURICIO CEVALLOS',
     role: 'PRINCIPAL',
     avatar: avatar2,
-    nametag: 'team-goventuresmauricio-cevallos',
+    nametag: 'team-goventuresmauricio-cevallos'
   },
   {
     name: 'ROBERTO BERMEJO',
     role: 'LEGAL DIRECTOR',
     avatar: avatar5,
-    nametag: 'team-goventuresroberto-bermejo',
-  },
+    nametag: 'team-goventuresroberto-bermejo'
+  }
 ];
 const TeamGrid = () => (
   <div className="team-grid md:px-5 lg:px-30 xl:px-40 ">
-    {team.map((el) => (
-      <div className="team-item items-center flex flex-col mr-1 ml-2 mt-4 md:mr-12 md:ml-12 ">
+    {team.map((el, index) => (
+      <div key={`team-item-${index}`} className="team-item items-center flex flex-col mr-1 ml-2 mt-4 md:mr-12 md:ml-12 ">
         <img
           className="w-24 md:w-32 lg:w-52"
           src={el.avatar}
