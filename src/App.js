@@ -1,19 +1,15 @@
+import React from 'react';
 import { useEffect } from 'react';
 import Aos from 'aos';
-import { BrowserRouter } from 'react-router-dom';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { Link } from 'react-router-dom';
 import { Fab } from 'react-tiny-fab';
 import Title from './components/Title';
 import Title2 from './components/Title2';
-import OpportunityItem, {
-  OpportunityItemDesk,
-} from './components/OportunitiesItem';
 import Footer from './components/Footer';
-import NavigationMobile from './components/NavigationMobile';
 import NavigationDesktop from './components/NavigationDesktop';
 import redFormula from './assets/images/fede1.png';
-import logo from './assets/images/ascj.png';
-import mail from './assets/images/emailp.svg';
+
 import 'react-tiny-fab/dist/styles.css';
 import 'aos/dist/aos.css';
 import './App.css';
@@ -27,27 +23,27 @@ const gridItems = [
       </>
     ),
     frame: false,
-    namestag: '',
+    namestag: ''
   },
   {
     image: '',
     text: '',
     frame: true,
-    namestag: '',
-  },
+    namestag: ''
+  }
 ];
 
 const top = () => {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth', // for smoothly scrolling
+    behavior: 'smooth' // for smoothly scrolling
   });
 };
 
 function App() {
   const styles = {
     backgroundColor: '#485922',
-    marginLeft: '75%',
+    marginLeft: '75%'
   };
 
   useEffect(() => {
@@ -55,73 +51,85 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <div style={{ overflowX: 'hidden' }}>
-        <Fab
-          mainButtonStyles={styles}
-          icon={<KeyboardArrowUpIcon />}
-          onClick={top}
-        />
-        <section className="banner-header" alt="Bg-goventuresbuilds">
-          <div className="blue-layer" />
-          <nav>
-            <img
-              className="brand md:hidden"
-              alt="Logo-goventurespositive"
-              src={logo}
-            />
-            <NavigationDesktop />
-          </nav>
-          <div className="header-container">
-            <div className="md:flex md:justify-center">
-              <div className="md:hidden">
-                <NavigationMobile />
-              </div>
-              <div
-                className="large-title-container"
+    <div style={{ overflowX: 'hidden' }}>
+      <Fab
+        mainButtonStyles={styles}
+        icon={<KeyboardArrowUpIcon />}
+        onClick={top}
+      />
+      <section className="banner-header" alt="Bg-goventuresbuilds">
+        <div className="blue-layer" />
+        <nav>
+          <NavigationDesktop />
+        </nav>
+        <div className="header-container">
+          <div className="md:flex md:justify-center">
+            <div className="md:hidden">
+             
+            </div>
+            <div
+              className="large-title-container"
+              style={{
+                zIndex: '300',
+                borderRadius: '3px',
+                opacity: '0.9'
+              }}
+            >
+              <h3
+                className="title text-right md:text-lg md:text-center"
                 style={{
-                  zIndex: '300',
+                  fontSize: '1.8em',
+                  justifyContent: 'center',
+                  color: 'white'
                 }}
               >
-                <h1 className="title text-right md:text-lg md:text-center">
-                  Del mineral a la piedra
-                </h1>
-                <p className="text-right md:text-center">
-                  <button
-                    type="submit"
+                Pasados y Futuro <br />
+              </h3>
+              <br />
+              <div
+                style={{
+                  display: 'flex',
+                  border: '3px solid white',
+                  borderRadius: '5px',
+                  fontSize: '1em'
+                }}
+              >
+                <h3 className="md:text-center">
+                  <span
                     style={{
-                      zIndex: '30',
-                      backgroundColor: 'transparent',
-                      border: '2px solid white',
-                      color: 'white',
+                      fontSize: '1.8em',
+                      justifyContent: 'center',
+                      color: 'white'
                     }}
                   >
-                    ¿Quienes somos?
-                  </button>
-                </p>
+                    Investigaciones del dr Federico Paredes Umaña sobre el
+                    período preclásico en el sureste mesoamericano y la
+                    tradición escultórica Cabezas de Jaguar
+                  </span>
+                </h3>
               </div>
             </div>
           </div>
-
-          {/* <img
-            alt="bubble"
-            className="circle-fill-accent"
-            src={circleFillAccent}
-          /> */}
-        </section>
-        <section className="formula-section flex flex-col lg:flex-row-reverse">
+        </div>
+      </section>
+      <section className="formula-section flex flex-col lg:flex-row-reverse">
+        <div
+          data-aos="fade-left"
+          className="pt-0 lg:mt-24 xl:mt-32 sizeXl"
+          style={{
+            marginRight: '10%'
+          }}
+        >
           <div
-            data-aos="fade-left"
-            className="pt-0 lg:mt-24 xl:mt-32 sizeXl"
             style={{
-              marginRight: '10%',
+              marginTop: '5em'
             }}
           >
             <Title2
               title={
                 <>
                   <span style={{}} className="md:text-6xl">
-                    ACCJ
+                    Proyecto arqueológico Cabezas de Jaguar
                   </span>
                   <br />{' '}
                   <span className="md:text-4xl">
@@ -132,123 +140,147 @@ function App() {
               }
             />
           </div>
-          <div id="formula-image-container" data-aos="fade-right">
-            <img
-              style={{
-                marginLeft: '10%',
-              }}
-              className="hidden sm:block"
-              src={redFormula}
-              alt="goventures-formula"
-            />
-            <img
-              className="block sm:hidden"
-              src={redFormula}
-              alt="goventures-formula-movil"
-            />
-          </div>
-          {/* <img className='circle-fill-primary' src={circleFillPrimary} /> */}
-        </section>
-
-        <section className="union-w-m">
-          <section className="w-full">
-            <section id="what-we-do-section">
-              <Title title="ASCJ" dark />
-              <div className="mt-10 lg:mb-0 md:mx-20">
-                <p className="cp px-4">
-                  El Proyecto Arqueológico Cabezas de Jaguar es un esfuerzo
-                  académico y cultural fundado por el Dr. Federico Paredes Umaña
-                  que busca visibilizar el legado de los pueblos originarios del
-                  occidente y centro de El Salvador desde una perspectiva,
-                  pionera en el país, de Arqueología Social e Interculturalidad.
-                </p>
-              </div>
-            </section>
-            <div className="accent-bg md:flex md:justify-between md:pt-2  relative">
-              <div className="flex justify-center md:items-center">
-                <p
-                  className="hidden sm:block text-white pt-8 md:pt-0 text-center md:text-left md:text-sm lg:text-xl pb-8 md:px-20"
-                  data-aos="fade-right"
-                >
-                  <b className="md:text-lg lg:text-2xl">
-                    Desde el año 2006 el proyecto ha registrado 69 monumentos de
-                    la tradición escultórica Cabeza de Jaguar en los actuales
-                    Departamentos de Santa Ana, Sonsonate, Ahuachapán y San
-                    Salvador.{' '}
-                  </b>
-                </p>
-                <p
-                  className="block sm:hidden text-white pt-8 md:pt-0 text-center md:text-left md:text-sm lg:text-xl pb-8 md:px-20"
-                  data-aos="fade-right"
-                >
-                  <b className="md:text-lg lg:text-2xl">
-                    El Proyecto Arqueológico Cabezas de Jaguar es un esfuerzo
-                    académico y cultural fundado por el Dr.
-                  </b>{' '}
-                  Federico Paredes Umaña que busca visibilizar el legado de los
-                  pueblos originarios del occidente y centro de El Salvador
-                  desde una perspectiva, pionera en el país, de Arqueología
-                  Social e Interculturalidad.
-                </p>
-              </div>
-              <div data-aos="fade" />
-
-              {/** MOLECULA DE ENMEDIO */}
+        </div>
+        <div id="formula-image-container" data-aos="fade-right">
+          <img className="hidden sm:block" src={redFormula} alt="dr-fede" />
+          <img className="block sm:hidden" src={redFormula} alt="dr-fede" />
+        </div>
+        {/* <img className='circle-fill-primary' src={circleFillPrimary} /> */}
+      </section>
+      <section className="union-w-m">
+        <section className="w-full">
+          <section id="what-we-do-section">
+            {/* <Title title="ACCJ" dark /> */}
+            <div className="mt-10 lg:mb-0 md:mx-20">
+              <p className="cp px-4">
+                El Proyecto Arqueológico Cabezas de Jaguar es un esfuerzo
+                académico y cultural fundado por el Dr. Federico Paredes Umaña
+                que busca visibilizar el legado de los pueblos originarios del
+                occidente y centro de El Salvador desde una perspectiva, pionera
+                en el país, de Arqueología Social e Interculturalidad.
+              </p>
             </div>
           </section>
+          <div className="accent-bg md:flex md:justify-between md:pt-2  relative">
+            <div className="flex justify-center md:items-center">
+              <p
+                className="hidden sm:block text-white pt-8 md:pt-0 text-center md:text-left md:text-sm lg:text-xl pb-8 md:px-20"
+                data-aos="fade-right"
+              >
+                <b className="md:text-lg lg:text-2xl">
+                  La exposición Cabezas de Jaguar, pasado y futuro busca
+                  disminuir el ocultamiento de la tradición, la exclusión social
+                  y la vulnerabilidad del patrimonio cultural que sufre la
+                  población de El Salvador.{' '}
+                </b>
+              </p>
+              <p
+                className="block sm:hidden text-white pt-8 md:pt-0 text-center md:text-left md:text-sm lg:text-xl pb-8 md:px-20"
+                data-aos="fade-right"
+              >
+                <b className="md:text-lg lg:text-2xl">
+                  Desde el año 2006 el proyecto ha registrado 69 monumentos de
+                  la tradición escultórica Cabeza de Jaguar en los actuales,
+                </b>{' '}
+                Departamentos de Santa Ana, Sonsonate, Ahuachapán y San
+                Salvador.
+              </p>
+            </div>
+            <div data-aos="fade" />
+
+            {/** MOLECULA DE ENMEDIO */}
+          </div>
         </section>
-        <div className="flex flex-col-reverse md:flex-row-reverse md:justify-between md:items-center">
-          <img
-            style={{
-              marginRight: '20%',
-              width: '20%',
-              height: '35%',
-            }}
-            alt="img"
-            data-aos="fade-right"
-            src="https://i0.wp.com/www.diariocolatino.com/wp-content/uploads/2015/08/toque-de-piedra-decima-entrega-nueva-web.jpg?zoom=2&resize=660%2C330&ssl=1"
-          />
-          <section className="idk mt-5 md:mt-0">
-            <p id="personal-inspiration" data-aos="fade-left">
-              Entre otros elementos, se exhiben los dibujos científicos de las
-              tallas prehispánicas del artista
-              <b className="text-3xl">
-                , Daniel Salazar, quien aplicó la técnica de puntillismo.
-              </b>
-            </p>
-          </section>
-          <div data-aos="fade" />
+      </section>
+      <div className="flex flex-col-reverse md:flex-row-reverse md:justify-between md:items-center">
+        <img
+          style={{
+            height: '35%'
+          }}
+          alt="img"
+          data-aos="fade-right"
+          src="https://i0.wp.com/www.diariocolatino.com/wp-content/uploads/2015/08/toque-de-piedra-decima-entrega-nueva-web.jpg?zoom=2&resize=660%2C330&ssl=1"
+        />
+        <section className="idk mt-5 md:mt-0">
+          <p id="personal-inspiration" data-aos="fade-left">
+            Desde el año 2006 el proyecto ha registrado 69 monumentos de la
+            tradición escultórica Cabeza de Jaguar en los actuales,
+            <b className="text-3xl">
+              Departamentos de Santa Ana, Sonsonate, Ahuachapán y San Salvador.
+            </b>
+          </p>
+        </section>
+        <div data-aos="fade" />
+      </div>
+
+      <section id="#opport" className="relative mt-20 sm:mt-24 op-container">
+        <Title
+          title={
+            <>
+              Asociación Cultural <br className="md:hidden" /> Cabezas de Jagua:
+            </>
+          }
+          titleStyle={{
+            fontSize: '2em'
+          }}
+        />
+        <Title
+          titleStyle={{
+            fontSize: '2em'
+          }}
+          title={
+            <>
+              ACCJ <br /> Fines u objetivos:
+            </>
+          }
+        />
+        <div
+          style={{
+            textAlign: 'center',
+            display: 'flex',
+            justifyContent: 'center'
+          }}
+        >
+          <ul>
+            <li>
+              Fortalecer la identidad cultural como fundamento de la mejora de
+              la calidad de vida de la población salvadoreña, centroamericana y
+              mesoamericana.
+            </li>
+            <li>
+              Promover la creación e implementación del modelo de gestión
+              comunitaria del patrimonio cultural con énfasis en la
+              participación de pueblos indígenas.
+            </li>
+            <li>
+              Desarrollar e implementar procesos educativos, formativos y de
+              diálogo de saberes vinculados a la cultura.
+            </li>
+            <li>
+              Impulsar, diseñar, asesorar y realizar investigaciones de alta
+              calidad relacionadas con la cultura la identidad y el patrimonio
+              cultural.
+            </li>
+            <li>
+              Promover, difundir, visibilizar y publicar contenidos relacionados
+              con los procesos culturales, el patrimonio cultural y el
+              fortalecimiento de la identidad salvadoreña, centroamericana y
+              mesoamericana.
+            </li>
+          </ul>
         </div>
-
-        <section id="#opport" className="relative mt-20 sm:mt-24 op-container">
-          <Title
-            title={
-              <>
-                Archivo <br className="md:hidden" /> Rojo:
-              </>
-            }
-          />
-          <div
-            className="mt-24 grid grid-cols-2 ml-12 mr-12 gap-y-24 md:hidden"
-            data-aos="fade-left"
-          >
-            {gridItems.map((el, index) => (
-              <OpportunityItem key={`archivo-${index}`} {...el} />
-            ))}
-          </div>
-          <div
-            className="mt-24 grid grid-cols-2 ml-12 mr-12 gap-y-24 md:grid-cols-3 gridDesk"
-            data-aos="fade-left"
-          >
-            {gridItems.map((el, index) => (
-              <OpportunityItemDesk key={`rojo-${index}`} {...el} />
-            ))}
-          </div>
-          {/* <img id="circle-fill-accent-desk"  className='opacity-30 circle-fill-accent ' src={circleFillPrimary} />
+        <Title
+          title={
+            <>
+              Archivo <br className="md:hidden" /> <Link to='/archivo'> Rojo: Click Aqui </Link>
+            </>
+          }
+        />
+        {/* <img id="circle-fill-accent-desk"  className='opacity-30 circle-fill-accent ' src={circleFillPrimary} />
           <img className='red-float md:hidden' src={red} /> */}
-        </section>
+      </section>
 
-        {/* <section id="keyprojects" className='mt-48 relative marcas-container'>
+      {/* <section id="keyprojects" className='mt-48 relative marcas-container'>
           <Title title={"Key Projects"} />
           <div className='mx-5 mt-8' >
             <p className='opacity-70 text-center md:text-xl'>
@@ -263,8 +295,8 @@ function App() {
             }}
           /> */}
 
-        {/* </section> */}
-        {/* <section id="partners" className='mt-16 partners-container' >
+      {/* </section> */}
+      {/* <section id="partners" className='mt-16 partners-container' >
           <img className='w-full' src={wave4} />
           <div className='ml-12 mr-12 mt-10' >
             <Title title={"Partners"} />
@@ -277,49 +309,20 @@ function App() {
           </div>
           <img className='w-full' src={wave2} />
         </section> */}
-        <section className="lg:relative">
-          {/* <div className='flex justify-end relative'>
+      <section className="lg:relative">
+        {/* <div className='flex justify-end relative'>
             <img src={red} className="red-rotated-2 md:absolute" />
             <img className='circle-fill-accent' src={circleFillPrimary} />
           </div> */}
-          {/* <div id="theteam" className='ml-4 mr-4'>
+        {/* <div id="theteam" className='ml-4 mr-4'>
             <Title title={"The team"} />
             <div className='mt-10' data-aos="fade-right" >
               <TeamGrid />
             </div>
           </div> */}
-          <section id="contactUs" className="mt-32 relative">
-            <Title title="Contact us" />
-            <div
-              className="flex justify-center mt-24 mb-24"
-              data-aos="fade-down"
-            >
-              <div className="flex flex-row items-center gap-4">
-                <img
-                  href="mailto:asociacioncabezasdejaguar@gmail.com"
-                  src={mail}
-                  className="w-8 h-8 md:w-16 md:h-16"
-                  alt="alt"
-                  style={{
-                    color: '#BCCF8F',
-                  }}
-                />
-                <span
-                  href="mailto:asociacioncabezasdejaguar@gmail.com"
-                  className="text-sm opacity-70 md:text-xl"
-                >
-                  asociacioncabezasdejaguar@gmail.com
-                </span>
-              </div>
-            </div>
-            {/* <img className='circle-fill-primary-top' src={circleFillPrimary} />
-            <img className='minired-top' src={minired} />
-            <img className='circle-fill-accent'  src={circleFillAccent} /> */}
-          </section>
-          <Footer />
-        </section>
-      </div>
-    </BrowserRouter>
+      </section>
+      <Footer />
+    </div>
   );
 }
 

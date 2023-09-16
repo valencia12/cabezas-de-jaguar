@@ -6,14 +6,14 @@ const BannerWave = ({
   bottomWave,
   meet,
   top,
-  imageStyle = {},
+  imageStyle = {}
 }) => (
   <section
-    className={`meetting ${top ? `meeting-top` : `meeting-bottom`}`}
+    className={`meetting ${top ? 'meeting-top' : 'meeting-bottom'}`}
     alt={meet}
     style={{
       backgroundImage: `url(${image})`,
-      ...imageStyle,
+      ...imageStyle
     }}
   >
     {topWave && <img alt="wave" className="top-wave md:hidden" src={topWave} />}

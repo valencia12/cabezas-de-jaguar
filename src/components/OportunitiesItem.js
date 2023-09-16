@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Aos from 'aos';
 import Archivo from '../assets/images/archivot.png';
+import Adorno from '../assets/images/cabezas.jpeg';
 
 const OpportunityItem = ({ image, text, namestag, frame = false }) => {
   useEffect(() => {
@@ -13,7 +14,7 @@ const OpportunityItem = ({ image, text, namestag, frame = false }) => {
         alt={namestag}
         className="ml-4 mr-4"
         style={{
-          width: '50%',
+          width: '50%'
         }}
       />
       <div
@@ -22,7 +23,7 @@ const OpportunityItem = ({ image, text, namestag, frame = false }) => {
           justifyContent: 'center',
           alignItems: 'center',
           position: 'relative',
-          overflow: 'visible',
+          overflow: 'visible'
         }}
         data-aos="fade-left"
       >
@@ -39,16 +40,16 @@ export const OpportunityItemDesk = ({
   image,
   text,
   frame = false,
-  namestag,
+  namestag
 }) => (
   <div
     className="flex flex-row justify-center"
     style={{
-      marginLeft: '20%',
+      marginLeft: '20%'
     }}
   >
     <img
-      src={image}
+      src={Adorno}
       alt={namestag}
       className="mr-4 w-20 md:mr-8 md:w-16 lg:w-24 xl:w-28 lg:mr-24"
     />
@@ -58,7 +59,7 @@ export const OpportunityItemDesk = ({
         justifyContent: 'center',
         alignItems: 'center',
         position: 'relative',
-        overflow: 'visible',
+        overflow: 'visible'
       }}
     >
       {frame && <img src={Archivo} alt="archivo" className="center-image " />}
