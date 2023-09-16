@@ -147,7 +147,6 @@ function App() {
         </div>
         {/* <img className='circle-fill-primary' src={circleFillPrimary} /> */}
       </section>
-
       <section className="union-w-m">
         <section className="w-full">
           <section id="what-we-do-section">

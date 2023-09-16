@@ -248,6 +248,7 @@ nav {
   justify-content: flex-end;
   align-items: center;
   background-color: #F5F5F5;
+  margin-top: -10%;
 }
 
 #personal-inspiration {
@@ -576,10 +577,7 @@ nav {
     height: 40vh;
   }
 
-  #circle-fill-accent-desk {
-    bottom: -60%;
-    z-index: -1;
-  }
+ 
 
   .red-rotated {
     width: 20%;
@@ -925,8 +923,8 @@ nav {
     position: relative;
     /* overflow-x: hidden; */
     /* width: 100%; */
-    /* top: -9%; */
-    bottom: 10%;
+    /* top: -9%;
+    bottom: 10%; */
     overflow-x: unset;
   }
 
