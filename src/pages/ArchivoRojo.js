@@ -1,20 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { Fab } from 'react-tiny-fab';
-import Aos from 'aos';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import DataTable from 'react-data-table-component';
 import { fetchDataFromApi } from '../api/request';
 import Footer from '../components/Footer';
 import logo from '../assets/images/ascj.png';
 import Header from '../components/Header';
+import ReactPaginate from 'react-paginate';
+import columns from './ColumnFormat';
+import './ArchivoRojo.css'; 
+
+const TABLE_LIMIT = 20;
 
 export default function ArchivoRojo() {
+    
     const [redFiles, setRedFiles] = useState(null);
     const [searchQuery, setSearchQuery] = useState('');
+    const [currentPage, setCurrentPage] = useState(0);
 
     useEffect(() => {
         const fetchData = () => {
-            const searchParams = { ...searchQuery };
+            const searchParams = { ...searchQuery, 
+                page: currentPage, 
+                limit: TABLE_LIMIT 
+            };
             fetchDataFromApi(searchParams)
               .then(apiData => {
                   setRedFiles(apiData);
@@ -28,94 +37,13 @@ export default function ArchivoRojo() {
         return () => {
             clearTimeout(debounceTimer);
         };
-    }, [searchQuery]);
+    }, [searchQuery, currentPage]);
 
-    const columns = [
-        {
-            id: 'reference_code',
-            name: 'Codigo de referencia',
-            selector: (row) => row.reference_code,
-            sortable: true
-        },
-        {
-            id: 'country_code',
-            name: 'Codigo de pais',
-            selector: (row) => row.country_code,
-            sortable: true
-        },
-        {
-            id: 'institution',
-            name: 'Institucion',
-            selector: (row) => row.institution,
-            sortable: true
-        },
-        {
-            id: 'dependency',
-            name: 'Dependencia',
-            selector: (row) => row.dependency,
-            sortable: true
-        },
-        {
-            id: 'document_type',
-            name: 'Tipo de documento',
-            selector: (row) => row.document_type,
-            sortable: true
-        },
-        {
-            id: 'title',
-            name: 'Titulo',
-            selector: (row) => row.title,
-            sortable: true
-        },
-        {
-            id: 'place_and_date',
-            name: 'Lugar y fecha',
-            selector: (row) => row.place_and_date,
-            sortable: true
-        },
-        {
-            id: 'content',
-            name: 'Contenido',
-            selector: (row) => row.content,
-            sortable: true
-        },
-        {
-            id: 'precedence',
-            name: 'Precedente',
-            selector: (row) => row.precedence,
-            sortable: true
-        },
-        {
-            id: 'language',
-            name: 'language',
-            selector: (row) => row.language,
-            sortable: true
-        },
-        {
-            id: 'physical_characteristics',
-            name: 'Caracteristicas fisicas',
-            selector: (row) => row.physical_characteristics,
-            sortable: true
-        },
-        {
-            id: 'volume',
-            name: 'Volumen',
-            selector: (row) => row.volume,
-            sortable: true
-        },
-        {
-            id: 'notes',
-            name: 'Notas',
-            selector: (row) => row.notes,
-            sortable: true
-        },
-        {
-            id: 'year',
-            name: 'Año',
-            selector: (row) => row.year,
-            sortable: true
-        }
-    ];
+    const handlePageChange = selectedPage => {
+        setCurrentPage(selectedPage.selected);
+    };
+
+    
 
     const top = () => {
         window.scrollTo({
@@ -184,6 +112,18 @@ export default function ArchivoRojo() {
                            columns={columns}
                            data={redFiles ? redFiles.data : []} />
             </section>
+            <div className="pagination-container">
+                {redFiles && redFiles.totalPages > 1 && (
+                    <ReactPaginate
+                        pageCount={redFiles.totalPages}
+                        pageRangeDisplayed={TABLE_LIMIT}
+                        marginPagesDisplayed={2}
+                        onPageChange={handlePageChange}
+                        containerClassName="pagination"
+                        activeClassName="active"
+                    />
+                )}
+            </div>
             <Footer/>
         </div>
     );
