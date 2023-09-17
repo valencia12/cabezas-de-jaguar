@@ -3,13 +3,6 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/images/ascj.png';
 import icon1 from '../assets/images/icon1.svg';
 
-const items = [
-  'What we do',
-  'Key project',
-  'Partners',
-  'The Team',
-  'Ready to build? Contact us'
-];
 const navs = [
   {
     name: 'Inicio',
