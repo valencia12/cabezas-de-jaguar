@@ -1,20 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {hyperlinkStyle} from './ArchivoRojoConstants';
+import {styles} from './ArchivoRojoConstants';
 
 const columns = [
     {
         id: 'country_code',
-        name: 'Codigo de pais',
+        name: 'Código de pais',
         selector: (row) => row.country_code,
         sortable: true,
         wrap: true
     },
     {
         id: 'reference_code',
-        name: 'Codigo de referencia',
+        name: 'Código de referencia',
         selector: (row) => (
-            <Link style={hyperlinkStyle} to={`/archivo/${row.reference_code}`}>
+            <Link style={styles.hyperlinkStyle} 
+            to={`/archivo/${row.reference_code}`}>
                 {row.reference_code}
             </Link>
         ),
@@ -23,7 +24,7 @@ const columns = [
     },
     {
         id: 'institution',
-        name: 'Institucion',
+        name: 'Institución',
         selector: (row) => row.institution,
         sortable: true,
         wrap: true
@@ -58,7 +59,7 @@ const columns = [
     },
     {
         id: 'language',
-        name: 'Lengua',
+        name: 'Lenguaje',
         selector: (row) => row.language,
         sortable: true,
         wrap: true

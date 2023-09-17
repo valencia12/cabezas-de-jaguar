@@ -258,50 +258,6 @@ function App() {
             </>
           }
         />
-        {/* <img id="circle-fill-accent-desk"  className='opacity-30 circle-fill-accent ' src={circleFillPrimary} />
-          <img className='red-float md:hidden' src={red} /> */}
-      </section>
-
-      {/* <section id="keyprojects" className='mt-48 relative marcas-container'>
-          <Title title={"Key Projects"} />
-          <div className='mx-5 mt-8' >
-            <p className='opacity-70 text-center md:text-xl'>
-              We have Worked alongside these projects and companies:
-            </p>
-            <MarcasGrid images={marcas} card coleccionAlts={coleccionAlts} />
-          </div>
-          <img src={red} className="red-rotated marginred" />
-          <img className='circle-fill-primary' src={circleFillAccent}
-            style={{
-              zIndex: "-10"
-            }}
-          /> */}
-
-      {/* </section> */}
-      {/* <section id="partners" className='mt-16 partners-container' >
-          <img className='w-full' src={wave4} />
-          <div className='ml-12 mr-12 mt-10' >
-            <Title title={"Partners"} />
-            <p className='text-gray-500 text-center mt-8 md:text-xl'>
-              Nobody knows how long it took to build Rome, but we would bet it was done by teaming up.
-            </p>
-
-            <ParnertsGrid images={partnersAlt} partnersAlt={partnersAlt} />
-
-          </div>
-          <img className='w-full' src={wave2} />
-        </section> */}
-      <section className="lg:relative">
-        {/* <div className='flex justify-end relative'>
-            <img src={red} className="red-rotated-2 md:absolute" />
-            <img className='circle-fill-accent' src={circleFillPrimary} />
-          </div> */}
-        {/* <div id="theteam" className='ml-4 mr-4'>
-            <Title title={"The team"} />
-            <div className='mt-10' data-aos="fade-right" >
-              <TeamGrid />
-            </div>
-          </div> */}
       </section>
       <Footer />
     </div>

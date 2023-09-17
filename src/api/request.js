@@ -1,7 +1,12 @@
 import axios from 'axios';
 
-const apiUrl =
- 'http://archivo-rojo.asociacioncabezasdejaguar.com/api/red-file';
+
+
+const apiEndpoint = process.env.REACT_APP_API_ENDPOINT;
+const https = process.env.REACT_APP_HTTPS;
+
+const apiUrl = `${https}://${apiEndpoint}/red-file`;
+
 
 export const fetchAllRedFiles = async (searchParams) => {
     const {page = 0, limit = 50} = searchParams;

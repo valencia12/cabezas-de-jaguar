@@ -960,3 +960,7 @@ nav {
     /* Los elementos se distribuirán equitativamente en el espacio disponible */
   }
 }
+
+.MuiTypography {
+  font-family: 'Maax Rounded';
+}

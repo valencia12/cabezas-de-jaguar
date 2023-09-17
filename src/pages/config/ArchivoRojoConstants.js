@@ -1,22 +1,30 @@
-const styles = {
+const mainButtonStyle = {
     backgroundColor: '#485922',
     marginLeft: '75%'
 };
-
+const tableHeader = {
+    fontSize: '13px',
+    fontFamily: 'Maax Rounded',
+    backgroundColor: 'green'
+};
 const hyperlinkStyle = {
     color: 'blue', 
     textDecoration: 'underline', 
     cursor: 'pointer'
-  };
-
+};
 const buttonStyle = {
     display: 'inline-block',
     padding: '10px 20px',
     backgroundColor: '#485922',
     color: 'white',
-    textDecoration: 'none',
-    borderRadius: '5px',
     cursor: 'pointer'
+};
+
+const styles = {
+    mainButtonStyle,
+    tableHeader,
+    hyperlinkStyle,
+    buttonStyle
 };
 
 
@@ -28,9 +36,8 @@ const top = () => {
         behavior: 'smooth' // for smoothly scrolling
     });
 };
-
 const goBack = () => {
     window.history.back();
 };
 
-export {styles, hyperlinkStyle, buttonStyle, TABLE_LIMIT, top, goBack};
+export {styles, TABLE_LIMIT, top, goBack};

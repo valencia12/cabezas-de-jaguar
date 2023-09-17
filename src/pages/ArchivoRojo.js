@@ -46,7 +46,7 @@ export default function ArchivoRojo() {
     return (
         <div style={{ overflowX: 'hidden' }}>
             <Fab
-                mainButtonStyles={styles}
+                mainButtonStyles={styles.mainButtonStyle}
                 icon={<KeyboardArrowUpIcon />}
                 onClick={top}
             />
@@ -54,7 +54,8 @@ export default function ArchivoRojo() {
             <section>
                 <DataTable fixedHeader={true}
                            columns={columns}
-                           data={redFiles ? redFiles.data : []} />
+                           data={redFiles ? redFiles.data : []}
+                           style={styles.tableHeader} />
             </section>
             <div className="pagination-container">
                 {redFiles && redFiles.totalPages > 1 && (

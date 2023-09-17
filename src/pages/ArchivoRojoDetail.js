@@ -5,19 +5,21 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Footer from '../components/Footer';
 import HeaderSection from '../components/HeaderSection';
 import { fetchRedFile } from '../api/request';
-import {styles, top, goBack, buttonStyle} from './config/ArchivoRojoConstants';
+
+import { Grid } from '@mui/material';
+import {styles, top, goBack} from './config/ArchivoRojoConstants';
 import './ArchivoRojo.css'; 
-import { Button } from '@mui/material';
+
 
 // Rest of your component code...
 
 export default function ArchivoRojoDetail() {
-    const { id } = useParams(); 
+    const { referenceCode } = useParams(); 
     const [data, setData] = useState(null);
 
 
     useEffect(() => {
-        fetchRedFile(id)
+        fetchRedFile(referenceCode)
         .then(data => {
             setData(data);
             console.log(data);
@@ -25,34 +27,46 @@ export default function ArchivoRojoDetail() {
         .catch(error => {
             console.error('Error al obtener datos de la API:', error);
         });
-    }, [id]);
+    }, [referenceCode]);
 
     return (
         <div style={{ overflowX: 'hidden' }}>
             <Fab
-                mainButtonStyles={styles}
+                mainButtonStyles={styles.mainButtonStyle}
                 icon={<KeyboardArrowUpIcon />}
                 onClick={top}
             />
             <HeaderSection/>
             <section>
-                <Button style={buttonStyle} onClick={goBack}>Regresar</Button>
+                <Grid container spacing={2} className='grid-container'>
+                    <Grid item xs={6} className='grid-item'>
+                        <button  onClick={goBack}>Regresar</button>
+                    </Grid>
+                </Grid>
                 {data !== null && ( // Conditional rendering
-                    <div>
-                        <p>Reference Code: {data.reference_code}</p>
-                        <p>Country Code: {data.country_code}</p>
-                        <p>Institution: {data.institution}</p>
-                        <p>Dependency: {data.dependency}</p>
-                        <p>Document Type: {data.document_type}</p>
-                        <p>Title: {data.title}</p>
-                        <p>Place and Date: {data.place_and_date}</p>
-                        <p>Content: {data.content}</p>
-                        <p>Precedence: {data.precedence}</p>
-                        <p>Language: {data.language}</p>
-                        <p>Physical Characteristics: {data.physical_characteristics}</p>
-                        <p>Volume: {data.volume}</p>
-                        <p>Notes: {data.notes}</p>
-                    </div>
+                    <Grid container spacing={2} className='grid-container'>
+                        <Grid item xs={6} className='grid-item'>
+                            <p>Código de Referencia: {data.reference_code}</p>
+                            <p>Código de País: {data.country_code}</p>
+                            <p>Institución: {data.institution}</p>
+                            <p>Dependencia: {data.dependency}</p>
+                            <p>Tipo de Documento: {data.document_type}</p>
+                            <p>Título: {data.title}</p>
+                        </Grid>
+                        <Grid item xs={6} className='grid-item'>
+                            <p>Lugar y Fecha: {data.place_and_date}</p>
+                            <p>Precedencia: {data.precedence}</p>
+                            <p>Idioma: {data.language}</p>
+                            <p>Características Físicas: {data.physical_characteristics}</p>
+                            <p>Volumen: {data.volume}</p>
+                            <p>Notas: {data.notes}</p>
+                        </Grid>
+                        <Grid item xs={6} className='grid-item'>
+                            <p className='content-row'>
+                                Contenido: {data.content}
+                            </p>
+                        </Grid>
+                    </Grid>
                 )}
             </section>
             <Footer/>

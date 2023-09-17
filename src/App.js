@@ -5,6 +5,9 @@ import App from './AppComponent';
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
+  typography: {
+    fontFamily: ['Maax Rounded', 'sans-serif']
+  },
   palette: {
     primary: {
       main: '#485922'
