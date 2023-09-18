@@ -28,9 +28,10 @@ RUN npm run build
 # Remove src files
 RUN rm -rf ./src
 
-# Read environment and use in build time
-ARG FRONTEND_PORT
+
 ENV PORT=$FRONTEND_PORT
+ENV REACT_APP_HOST_IP_ADDRESS $REACT_APP_HOST_IP_ADDRESS
+ENV REACT_APP_HOST_IP_ADDRESS $REACT_APP_HOST_IP_ADDRESS
 
 EXPOSE $PORT
 
