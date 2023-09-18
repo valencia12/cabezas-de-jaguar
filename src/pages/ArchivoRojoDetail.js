@@ -22,7 +22,6 @@ export default function ArchivoRojoDetail() {
         fetchRedFile(referenceCode)
         .then(data => {
             setData(data);
-            console.log(data);
         })
         .catch(error => {
             console.error('Error al obtener datos de la API:', error);
