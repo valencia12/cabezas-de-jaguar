@@ -199,7 +199,7 @@ function App() {
         <Title
           title={
             <>
-              Asociación Cultural <br className="md:hidden" /> Cabezas de Jagua:
+              Asociación Cultural <br className="md:hidden" /> Cabezas de Jaguar:
             </>
           }
           titleStyle={{
