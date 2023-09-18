@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import NavigationDesktop from './components/NavigationDesktop';
 import redFormula from './assets/images/fede1.png';
 
+
 import 'react-tiny-fab/dist/styles.css';
 import 'aos/dist/aos.css';
 import './App.css';
@@ -254,7 +255,7 @@ function App() {
         <Title
           title={
             <>
-              Archivo <br className="md:hidden" /> <Link to='/archivo'> Rojo: Click Aqui </Link>
+              Archivo <br className="md:hidden" /> <Link onClick={top} to='/archivo'> Rojo: Click Aqui </Link>
             </>
           }
         />

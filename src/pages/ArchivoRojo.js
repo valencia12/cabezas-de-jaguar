@@ -5,15 +5,17 @@ import DataTable from 'react-data-table-component';
 import { fetchAllRedFiles } from '../api/request';
 import Footer from '../components/Footer';
 import HeaderSection from '../components/HeaderSection';
-import ReactPaginate from 'react-paginate';
 import columns from './config/ArchivoRojoColumnFormat';
+import { Grid } from '@mui/material';
+import BackButton from '../components/BackButton';
+import Pagination from '../components/Pagination';
+
 import {styles, top, TABLE_LIMIT} from './config/ArchivoRojoConstants';
 import './ArchivoRojo.css'; 
 
 
 
 export default function ArchivoRojo() {
-    
     const [redFiles, setRedFiles] = useState(null);
     const [searchQuery, setSearchQuery] = useState('');
     const [currentPage, setCurrentPage] = useState(0);
@@ -44,7 +46,7 @@ export default function ArchivoRojo() {
     };
 
     return (
-        <div style={{ overflowX: 'hidden' }}>
+        <div >
             <Fab
                 mainButtonStyles={styles.mainButtonStyle}
                 icon={<KeyboardArrowUpIcon />}
@@ -52,22 +54,29 @@ export default function ArchivoRojo() {
             />
             <HeaderSection/>
             <section>
-                <DataTable fixedHeader={true}
-                           columns={columns}
-                           data={redFiles ? redFiles.data : []} />
+                <Grid container spacing={2} className='grid-container'>
+                    <Grid item xs={12} className='grid-item'>
+                        <BackButton/>
+                        <Pagination 
+                        data={redFiles} 
+                        handlePageChange={handlePageChange}
+                        tableLimit={TABLE_LIMIT}
+                        />
+                    </Grid>
+                    <Grid item xs={12} className='grid-item'>
+                        <DataTable fixedHeader={false}
+                            columns={columns}
+                            data={redFiles ? redFiles.data : []} />
+                    </Grid>
+                    <Grid item xs={12} className='grid-item'>
+                        <Pagination 
+                        data={redFiles} 
+                        handlePageChange={handlePageChange}
+                        tableLimit={TABLE_LIMIT}
+                        />
+                    </Grid>
+                </Grid>    
             </section>
-            <div className="pagination-container">
-                {redFiles && redFiles.totalPages > 1 && (
-                    <ReactPaginate
-                        pageCount={redFiles.totalPages}
-                        pageRangeDisplayed={TABLE_LIMIT}
-                        marginPagesDisplayed={2}
-                        onPageChange={handlePageChange}
-                        containerClassName="pagination"
-                        activeClassName="active"
-                    />
-                )}
-            </div>
             <Footer/>
         </div>
     );
