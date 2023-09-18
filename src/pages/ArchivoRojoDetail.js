@@ -8,7 +8,6 @@ import HeaderSection from '../components/HeaderSection';
 import { fetchRedFile } from '../api/request';
 import BackButton from '../components/BackButton';
 
-
 import { Grid } from '@mui/material';
 import {styles, top, goBack} from './config/ArchivoRojoConstants';
 import './ArchivoRojo.css'; 
@@ -43,7 +42,7 @@ export default function ArchivoRojoDetail() {
                 
                     <Grid container spacing={2} className='grid-container'>
                         <Grid item xs={12} className='grid-item'>
-                            <BackButton/>
+                            <BackButton link={'/archivo'}/>
                         </Grid>
                         {data !== null && ( // Conditional rendering
                         <>
@@ -73,7 +72,7 @@ export default function ArchivoRojoDetail() {
                                 </p>
                             </Grid>
                             <Grid item xs={12} className='grid-item'>
-                                <button onClick={goBack}>Reservar <EmailIcon/></button>
+                                <button>Reservar <EmailIcon/></button>
                             </Grid>
                         </>
                         )}

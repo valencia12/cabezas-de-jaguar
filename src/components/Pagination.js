@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
 
-const Pagination = ({data, handlePageChange, tableLimit}) => (
+const Pagination = ({data, handlePageChange, tableLimit, initialPage}) => (
 
     <div className="pagination-container">
         {data && data.totalPages > 1 && (
@@ -12,6 +12,7 @@ const Pagination = ({data, handlePageChange, tableLimit}) => (
                 onPageChange={handlePageChange}
                 containerClassName="pagination"
                 activeClassName="active"
+                initialPage={initialPage}
             />
         )}
     </div>

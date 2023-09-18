@@ -20,6 +20,8 @@ export default function ArchivoRojo() {
     const [searchQuery, setSearchQuery] = useState('');
     const [currentPage, setCurrentPage] = useState(0);
 
+    
+
     useEffect(() => {
         const fetchData = () => {
             const searchParams = { ...searchQuery, 
@@ -56,12 +58,7 @@ export default function ArchivoRojo() {
             <section>
                 <Grid container spacing={2} className='grid-container'>
                     <Grid item xs={12} className='grid-item'>
-                        <BackButton/>
-                        <Pagination 
-                        data={redFiles} 
-                        handlePageChange={handlePageChange}
-                        tableLimit={TABLE_LIMIT}
-                        />
+                        <BackButton link={'/'}/>
                     </Grid>
                     <Grid item xs={12} className='grid-item'>
                         <DataTable fixedHeader={false}
@@ -69,10 +66,11 @@ export default function ArchivoRojo() {
                             data={redFiles ? redFiles.data : []} />
                     </Grid>
                     <Grid item xs={12} className='grid-item'>
-                        <Pagination 
+                    <Pagination 
                         data={redFiles} 
                         handlePageChange={handlePageChange}
                         tableLimit={TABLE_LIMIT}
+                        initialPage={currentPage}
                         />
                     </Grid>
                 </Grid>    
