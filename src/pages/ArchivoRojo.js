@@ -54,8 +54,7 @@ export default function ArchivoRojo() {
             <section>
                 <DataTable fixedHeader={true}
                            columns={columns}
-                           data={redFiles ? redFiles.data : []}
-                           style={styles.tableHeader} />
+                           data={redFiles ? redFiles.data : []} />
             </section>
             <div className="pagination-container">
                 {redFiles && redFiles.totalPages > 1 && (

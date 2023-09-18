@@ -2,11 +2,6 @@ const mainButtonStyle = {
     backgroundColor: '#485922',
     marginLeft: '75%'
 };
-const tableHeader = {
-    fontSize: '13px',
-    fontFamily: 'Maax Rounded',
-    backgroundColor: 'green'
-};
 const hyperlinkStyle = {
     color: 'blue', 
     textDecoration: 'underline', 
@@ -22,7 +17,6 @@ const buttonStyle = {
 
 const styles = {
     mainButtonStyle,
-    tableHeader,
     hyperlinkStyle,
     buttonStyle
 };
