@@ -28,20 +28,13 @@ const OpportunityItem = ({ image, text, namestag, frame = false }) => {
         data-aos="fade-left"
       >
         {frame && <img src={Archivo} alt="archivo" className="center-image" />}
-        <h3 className="text-blue-900 font-normal text-center text-sm md:text-lg">
-          {text}
-        </h3>
+        <h3 className="text-blue-900 font-normal text-center text-sm md:text-lg">{text}</h3>
       </div>
     </>
   );
 };
 
-export const OpportunityItemDesk = ({
-  image,
-  text,
-  frame = false,
-  namestag
-}) => (
+export const OpportunityItemDesk = ({ _, text, frame = false, namestag }) => (
   <div
     className="flex flex-row justify-center"
     style={{

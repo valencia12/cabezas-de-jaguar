@@ -27,11 +27,7 @@ const MarcasGrid = ({ card, coleccionAlts }) => {
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <img
-                      style={{ width: '90%' }}
-                      src={e.img}
-                      alt={e.namestag}
-                    />
+                    <img style={{ width: '90%' }} src={e.img} alt={e.namestag} />
                   </a>
                 </div>
               );

@@ -1,13 +1,6 @@
 import React from 'react';
 
-const BannerWave = ({
-  image,
-  topWave,
-  bottomWave,
-  meet,
-  top,
-  imageStyle = {}
-}) => (
+const BannerWave = ({ image, topWave, bottomWave, meet, top, imageStyle = {} }) => (
   <section
     className={`meetting ${top ? 'meeting-top' : 'meeting-bottom'}`}
     alt={meet}
@@ -17,9 +10,7 @@ const BannerWave = ({
     }}
   >
     {topWave && <img alt="wave" className="top-wave md:hidden" src={topWave} />}
-    {bottomWave && (
-      <img alt="wave" className="bottom-wave md:hidden" src={bottomWave} />
-    )}
+    {bottomWave && <img alt="wave" className="bottom-wave md:hidden" src={bottomWave} />}
   </section>
 );
 

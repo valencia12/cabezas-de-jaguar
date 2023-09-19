@@ -10,11 +10,9 @@ import Footer from './components/Footer';
 import NavigationDesktop from './components/NavigationDesktop';
 import redFormula from './assets/images/fede1.png';
 
-
 import 'react-tiny-fab/dist/styles.css';
 import 'aos/dist/aos.css';
 import './App.css';
-
 
 const top = () => {
   window.scrollTo({
@@ -35,11 +33,7 @@ function App() {
 
   return (
     <div style={{ overflowX: 'hidden' }}>
-      <Fab
-        mainButtonStyles={styles}
-        icon={<KeyboardArrowUpIcon />}
-        onClick={top}
-      />
+      <Fab mainButtonStyles={styles} icon={<KeyboardArrowUpIcon />} onClick={top} />
       <section className="banner-header" alt="Bg-goventuresbuilds">
         <div className="blue-layer" />
         <nav>
@@ -47,9 +41,7 @@ function App() {
         </nav>
         <div className="header-container">
           <div className="md:flex md:justify-center">
-            <div className="md:hidden">
-             
-            </div>
+            <div className="md:hidden"></div>
             <div
               className="large-title-container"
               style={{
@@ -85,9 +77,8 @@ function App() {
                       color: 'white'
                     }}
                   >
-                    Investigaciones del dr Federico Paredes Umaña sobre el
-                    período preclásico en el sureste mesoamericano y la
-                    tradición escultórica Cabezas de Jaguar
+                    Investigaciones del dr Federico Paredes Umaña sobre el período preclásico en el
+                    sureste mesoamericano y la tradición escultórica Cabezas de Jaguar
                   </span>
                 </h3>
               </div>
@@ -114,11 +105,7 @@ function App() {
                   <span style={{}} className="md:text-6xl">
                     Proyecto arqueológico Cabezas de Jaguar
                   </span>
-                  <br />{' '}
-                  <span className="md:text-4xl">
-                    {' '}
-                    Cabezas de Jaguar, pasado y futuro{' '}
-                  </span>
+                  <br /> <span className="md:text-4xl"> Cabezas de Jaguar, pasado y futuro </span>
                 </>
               }
             />
@@ -136,11 +123,10 @@ function App() {
             {/* <Title title="ACCJ" dark /> */}
             <div className="mt-10 lg:mb-0 md:mx-20">
               <p className="cp px-4">
-                El Proyecto Arqueológico Cabezas de Jaguar es un esfuerzo
-                académico y cultural fundado por el Dr. Federico Paredes Umaña
-                que busca visibilizar el legado de los pueblos originarios del
-                occidente y centro de El Salvador desde una perspectiva, pionera
-                en el país, de Arqueología Social e Interculturalidad.
+                El Proyecto Arqueológico Cabezas de Jaguar es un esfuerzo académico y cultural
+                fundado por el Dr. Federico Paredes Umaña que busca visibilizar el legado de los
+                pueblos originarios del occidente y centro de El Salvador desde una perspectiva,
+                pionera en el país, de Arqueología Social e Interculturalidad.
               </p>
             </div>
           </section>
@@ -151,10 +137,9 @@ function App() {
                 data-aos="fade-right"
               >
                 <b className="md:text-lg lg:text-2xl">
-                  La exposición Cabezas de Jaguar, pasado y futuro busca
-                  disminuir el ocultamiento de la tradición, la exclusión social
-                  y la vulnerabilidad del patrimonio cultural que sufre la
-                  población de El Salvador.{' '}
+                  La exposición Cabezas de Jaguar, pasado y futuro busca disminuir el ocultamiento
+                  de la tradición, la exclusión social y la vulnerabilidad del patrimonio cultural
+                  que sufre la población de El Salvador.{' '}
                 </b>
               </p>
               <p
@@ -162,11 +147,10 @@ function App() {
                 data-aos="fade-right"
               >
                 <b className="md:text-lg lg:text-2xl">
-                  Desde el año 2006 el proyecto ha registrado 69 monumentos de
-                  la tradición escultórica Cabeza de Jaguar en los actuales,
+                  Desde el año 2006 el proyecto ha registrado 69 monumentos de la tradición
+                  escultórica Cabeza de Jaguar en los actuales,
                 </b>{' '}
-                Departamentos de Santa Ana, Sonsonate, Ahuachapán y San
-                Salvador.
+                Departamentos de Santa Ana, Sonsonate, Ahuachapán y San Salvador.
               </p>
             </div>
             <div data-aos="fade" />
@@ -186,8 +170,8 @@ function App() {
         />
         <section className="idk mt-5 md:mt-0">
           <p id="personal-inspiration" data-aos="fade-left">
-            Desde el año 2006 el proyecto ha registrado 69 monumentos de la
-            tradición escultórica Cabeza de Jaguar en los actuales,
+            Desde el año 2006 el proyecto ha registrado 69 monumentos de la tradición escultórica
+            Cabeza de Jaguar en los actuales,
             <b className="text-3xl">
               Departamentos de Santa Ana, Sonsonate, Ahuachapán y San Salvador.
             </b>
@@ -226,36 +210,36 @@ function App() {
         >
           <ul>
             <li>
-              Fortalecer la identidad cultural como fundamento de la mejora de
-              la calidad de vida de la población salvadoreña, centroamericana y
-              mesoamericana.
+              Fortalecer la identidad cultural como fundamento de la mejora de la calidad de vida de
+              la población salvadoreña, centroamericana y mesoamericana.
             </li>
             <li>
-              Promover la creación e implementación del modelo de gestión
-              comunitaria del patrimonio cultural con énfasis en la
-              participación de pueblos indígenas.
+              Promover la creación e implementación del modelo de gestión comunitaria del patrimonio
+              cultural con énfasis en la participación de pueblos indígenas.
             </li>
             <li>
-              Desarrollar e implementar procesos educativos, formativos y de
-              diálogo de saberes vinculados a la cultura.
+              Desarrollar e implementar procesos educativos, formativos y de diálogo de saberes
+              vinculados a la cultura.
             </li>
             <li>
-              Impulsar, diseñar, asesorar y realizar investigaciones de alta
-              calidad relacionadas con la cultura la identidad y el patrimonio
-              cultural.
+              Impulsar, diseñar, asesorar y realizar investigaciones de alta calidad relacionadas
+              con la cultura la identidad y el patrimonio cultural.
             </li>
             <li>
-              Promover, difundir, visibilizar y publicar contenidos relacionados
-              con los procesos culturales, el patrimonio cultural y el
-              fortalecimiento de la identidad salvadoreña, centroamericana y
-              mesoamericana.
+              Promover, difundir, visibilizar y publicar contenidos relacionados con los procesos
+              culturales, el patrimonio cultural y el fortalecimiento de la identidad salvadoreña,
+              centroamericana y mesoamericana.
             </li>
           </ul>
         </div>
         <Title
           title={
             <>
-              Archivo <br className="md:hidden" /> <Link onClick={top} to='/archivo'> Rojo: Click Aqui </Link>
+              Archivo <br className="md:hidden" />{' '}
+              <Link onClick={top} to="/archivo">
+                {' '}
+                Rojo: Click Aqui{' '}
+              </Link>
             </>
           }
         />

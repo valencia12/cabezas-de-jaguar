@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/ascj.png';
-import icon1 from '../assets/images/icon1.svg';
 
 const navs = [
   {

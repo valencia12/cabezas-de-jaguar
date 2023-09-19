@@ -40,16 +40,13 @@ const team = [
 const TeamGrid = () => (
   <div className="team-grid md:px-5 lg:px-30 xl:px-40 ">
     {team.map((el, index) => (
-      <div key={`team-item-${index}`} className="team-item items-center flex flex-col mr-1 ml-2 mt-4 md:mr-12 md:ml-12 ">
-        <img
-          className="w-24 md:w-32 lg:w-52"
-          src={el.avatar}
-          alt={el.nametag}
-        />
+      <div
+        key={`team-item-${index}`}
+        className="team-item items-center flex flex-col mr-1 ml-2 mt-4 md:mr-12 md:ml-12 "
+      >
+        <img className="w-24 md:w-32 lg:w-52" src={el.avatar} alt={el.nametag} />
         <div className="mt-4 ">
-          <p className="little-text text-center text-blue-500	font-bold">
-            {el.name}
-          </p>
+          <p className="little-text text-center text-blue-500	font-bold">{el.name}</p>
           <p className="little-text-xs text-center">{el.role}</p>
         </div>
       </div>

@@ -30,7 +30,7 @@ COPY src ./src
 COPY public ./public
 
 # Install dependencies
-RUN npm install --verbose
+RUN npm install --production --verbose
 
 # Build the project
 RUN npm run build

@@ -7,9 +7,10 @@ const Footer = () => (
     <div className="flex flex-col">
       <div className="flex justify-start">
         <Title
-          title={'ACCJ'} titleStyle={{
-          color: '#FFF'
-        }}
+          title={'ACCJ'}
+          titleStyle={{
+            color: '#FFF'
+          }}
         />
       </div>
 

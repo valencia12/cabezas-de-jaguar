@@ -4,6 +4,7 @@
   "homepage": "",
   "private": true,
   "dependencies": {
+    "autoprefixer": "^10.4.7",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.8",
@@ -38,13 +39,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint:fix": "eslint ./src --fix"
+    "lint:fix": "eslint --fix ./src"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "./.eslintrc.json" 
   },
   "browserslist": {
     "production": [
@@ -59,7 +57,6 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.7",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.49.0",
     "eslint-plugin-react": "^7.33.2",

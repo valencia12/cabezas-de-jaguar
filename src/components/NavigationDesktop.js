@@ -1,15 +1,8 @@
 import React from 'react';
 import { HashLink } from 'react-router-hash-link';
 import logo from '../assets/images/ascj.png';
-import icon1 from '../assets/images/icon1.svg';
 
-const items = [
-  'What we do',
-  'Key project',
-  'Partners',
-  'The Team',
-  'Ready to build? Contact us'
-];
+
 const navs = [
   {
     name: 'Cabezas de Jaguar',
@@ -28,9 +21,9 @@ const NavigationDesktop = () => (
     </div>
     <div className="flex flex-row">
       {navs.map((it, index) => (
-        <div className="pt-8 pb-8 pointer nav-text" key={`navigation-div-${it.id}-${index}`} >
-          <span className="text-white"  key={`navigation-span-${it.id}-${index}`}>
-            <HashLink smooth="true" to={it.id}  key={`navigation-hashlink-${it.id}-${index}`}>
+        <div className="pt-8 pb-8 pointer nav-text" key={`navigation-div-${it.id}-${index}`}>
+          <span className="text-white" key={`navigation-span-${it.id}-${index}`}>
+            <HashLink smooth="true" to={it.id} key={`navigation-hashlink-${it.id}-${index}`}>
               <span key={`navigation-name-${it.id}-${index}`}>{it.name}</span>
             </HashLink>
           </span>
