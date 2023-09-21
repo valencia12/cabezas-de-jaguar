@@ -18,8 +18,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Copy eslint file
-COPY .eslintrc.json ./
-
+COPY .eslintrc.json .
 
 # Copy tailwind.config.json
 COPY tailwind.config.js ./
