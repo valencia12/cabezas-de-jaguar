@@ -81,12 +81,13 @@ const EmailModal = ({ open, handleClose, formData }) => {
   return (
     <Modal open={open} >
     <Box
-      sx={{
+     sx={{
         position: 'absolute',
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: '33%',
+        width: '90%', // Set a default width for smaller screens (e.g., mobile)
+        maxWidth: '600px', // Set a maximum width for larger screens (e.g., PC)
         bgcolor: 'background.paper',
         boxShadow: 24,
         p: 4
