@@ -17,29 +17,11 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Copy eslint file
-COPY .eslintrc.json .
-
-# Copy tailwind.config.json
-COPY tailwind.config.js ./
-
-# Copy postcss.config.js file
-COPY postcss.config.js ./
-
-# Copy source project
-COPY src ./src
-
-# Copy source project
-COPY public ./public
-
 # Build the project
 COPY build ./
 
 # Install dependencies
 RUN npm install --production --verbose
-
-# Remove src files
-RUN rm -rf ./src
 
 EXPOSE $PORT
 
