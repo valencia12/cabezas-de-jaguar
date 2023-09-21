@@ -32,11 +32,11 @@ COPY src ./src
 # Copy source project
 COPY public ./public
 
+# Build the project
+COPY build ./
+
 # Install dependencies
 RUN npm install --production --verbose
-
-# Build the project
-RUN npm run build
 
 # Remove src files
 RUN rm -rf ./src
