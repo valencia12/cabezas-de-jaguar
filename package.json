@@ -39,6 +39,9 @@
     "eject": "react-scripts eject",
     "lint:fix": "eslint --fix ./src"
   },
+  "config": {
+    "timeout": 600000
+  },
   "eslintConfig": {
     "extends": "./.eslintrc.json"
   },
