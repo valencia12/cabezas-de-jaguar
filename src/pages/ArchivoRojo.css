@@ -65,8 +65,9 @@
 button {
   background-color: var(--primary-color);
   color: whitesmoke;
-  padding: 8px;
-  margin: 4px;
+  padding: 12px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 div[role="row"]  {

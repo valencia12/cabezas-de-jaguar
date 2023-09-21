@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import HeaderSection from '../components/HeaderSection';
 import { fetchRedFile } from '../api/request';
 import BackButton from '../components/BackButton';
+import EmailModal from '../components/EmailModal';
 
 import { Grid } from '@mui/material';
 import { styles, top } from './config/ArchivoRojoConstants';
@@ -17,6 +18,23 @@ import './ArchivoRojo.css';
 export default function ArchivoRojoDetail() {
   const { referenceCode } = useParams();
   const [data, setData] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const initialFormData = {
+    fullName: '',
+    email: '',
+    date: null,
+    description: '',
+    code: referenceCode
+  };
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
 
   useEffect(() => {
     fetchRedFile(referenceCode)
@@ -65,9 +83,10 @@ export default function ArchivoRojoDetail() {
                 <p className="content-row">Contenido: {data.content}</p>
               </Grid>
               <Grid item xs={12} className="grid-item">
-                <button>
+                <button onClick={handleOpenModal}>
                   Reservar <EmailIcon />
                 </button>
+                <EmailModal open={modalOpen} handleClose={handleCloseModal} formData={initialFormData}/>
               </Grid>
             </>
           )}

@@ -22,3 +22,8 @@ export const fetchRedFile = async (referenceCode) => {
   const response = await axios.get(`${apiUrl}/${referenceCode}`);
   return response.data;
 };
+
+export const reserveRedFile = async (paylod) => {
+  const response = await axios.post(`${apiUrl}/contact`, paylod);
+  return response.data;
+};
