@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import EmailIcon from '@mui/icons-material/Email';
 import TextField from '@mui/material/TextField';
 import { Grid } from '@mui/material';
@@ -95,10 +94,15 @@ const EmailModal = ({ open, handleClose, formData }) => {
     >
       <form onSubmit={handleSave}>
         <Grid container spacing={2} className="grid-container">
-            <Grid item xs={11} className="grid-item" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Typography variant="h4" component="div">
-                    Afiche de Reserva
-                </Typography>
+            <Grid item xs={12} className="grid-item" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div className='large-title-cotainer'>
+                    <h2  className="title text-right md:text-lg md:text-center"
+                    style={{
+                    fontSize: '1.8em',
+                    justifyContent: 'center',
+                    color: 'black'
+                    }}>Afiche de Reserva</h2>
+                </div>
             </Grid>
           <Grid item xs={1} className="grid-item" style={{ textAlign: 'right' }}>
             <IconButton
@@ -114,7 +118,7 @@ const EmailModal = ({ open, handleClose, formData }) => {
                 <CloseIcon />
             </IconButton>
           </Grid>
-          <Grid item xs={11} className="grid-item">
+          <Grid item xs={12} className="grid-item">
             <label>Debe ingresar los siguientes campos:</label>
           </Grid>
           <Grid item xs={12} className="grid-item">
