@@ -7,12 +7,17 @@ var APP_DIR = path.resolve(__dirname, 'src/frontend/app');
 const dotenv = require('dotenv-webpack');
 
 
-
 module.exports = {
   entry: APP_DIR + '/App.js',
   output: {
     filename: 'bundle.js',
-    path: '/dist'
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
+  },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
   },
   module: {
     rules: [

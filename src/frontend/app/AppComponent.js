@@ -8,11 +8,14 @@ import Title from './components/Title';
 import Title2 from './components/Title2';
 import Footer from './components/Footer';
 import NavigationDesktop from './components/NavigationDesktop';
-import redFormula from '../public/assets/images/fede1.png';
-
 import 'react-tiny-fab/dist/styles.css';
 import 'aos/dist/aos.css';
 import './AppComponent.css';
+
+
+const redFormula = React.lazy(() => import('../public/assets/images/fede1.png'));
+
+
 
 const top = () => {
   window.scrollTo({

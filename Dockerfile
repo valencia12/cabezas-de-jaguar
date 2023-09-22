@@ -33,11 +33,11 @@ FROM node:current-alpine3.16
 WORKDIR /app
 
 # Copy the built application from the build stage
-COPY --from=build /app/build ./
+COPY --from=build /app/dist ./dist
 COPY --from=build /app/package*.json ./
 
 # Expose the port specified by the ENV variable
 EXPOSE $PORT
 
 # Command to start your application
-CMD ["sh", "-c", "npm run start:build -- -l $PORT"]
+CMD ["sh", "-c", "npm run start:prod"]
