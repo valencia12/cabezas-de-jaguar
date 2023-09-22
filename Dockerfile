@@ -26,15 +26,7 @@ COPY . ./
 # Build the project
 RUN npm run build
 
-# Stage 2: Production Image
-FROM node:current-alpine3.16
-
-# Set the working directory
-WORKDIR /app
-
-# Copy the built application from the build stage
-COPY --from=build /app/dist ./dist
-COPY --from=build /app/package*.json ./
+RUN rm -r src
 
 # Expose the port specified by the ENV variable
 EXPOSE $PORT
