@@ -1,5 +1,5 @@
-# Base image
-FROM node:current-alpine3.16
+# Stage 1: Build
+FROM node:current-alpine3.16 as build
 
 # Use ARG to set build-time arguments
 ARG FRONTEND_PORT
@@ -17,13 +17,26 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
+# Install development dependencies (if needed)
+# RUN npm install
+
+# Copy the source code
+COPY . ./
+
 # Build the project
-COPY build ./
+RUN npm run build
 
-# Install dependencies
-RUN npm install --production --verbose
+# Stage 2: Production Image
+FROM node:current-alpine3.16
 
+# Set the working directory
+WORKDIR /app
+
+# Copy the built application from the build stage
+COPY --from=build /app/build ./
+
+# Expose the port specified by the ENV variable
 EXPOSE $PORT
 
-# Start the application
+# Command to start your application
 CMD ["sh", "-c", "npm run start:build -- -l $PORT"]
