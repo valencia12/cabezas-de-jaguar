@@ -34,6 +34,7 @@ WORKDIR /app
 
 # Copy the built application from the build stage
 COPY --from=build /app/build ./
+COPY --from=build /app/package*.json ./
 
 # Expose the port specified by the ENV variable
 EXPOSE $PORT
