@@ -33,22 +33,5 @@ RUN rm -r src
 # Expose the port specified by the ENV variable
 EXPOSE $PORT
 
-# Stage 2: Production Image
-FROM node:current-alpine3.16 as production
-
-# Set the working directory
-WORKDIR /app
-
-# Copy only the production-ready files from the build stage
-COPY --from=build /app/package*.json ./
-COPY --from=build /app/server.js ./
-COPY --from=build /app/dist ./dist/
-
-# Install production dependencies
-COPY --from=build /app/node_modules ./node_modules/
-
-# Expose the port specified by the ENV variable
-EXPOSE $PORT
-
 # Command to start your application
 CMD ["sh", "-c", "npm run start:prod"]
