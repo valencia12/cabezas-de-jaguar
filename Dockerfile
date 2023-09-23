@@ -26,6 +26,7 @@ COPY . ./
 # Build the project
 RUN npm run build
 
+# Remove source 
 RUN rm -r src
 
 # Expose the port specified by the ENV variable
