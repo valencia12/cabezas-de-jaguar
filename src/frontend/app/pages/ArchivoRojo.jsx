@@ -12,11 +12,11 @@ import Pagination from '../components/Pagination';
 
 import { styles, top, TABLE_LIMIT } from './config/ArchivoRojoConstants';
 import './ArchivoRojo.css';
+import ArchivoSearch from './ArchivoSearch';
 
 export default function ArchivoRojo() {
   const [redFiles, setRedFiles] = useState(null);
-  /* eslint-disable no-unused-vars */
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState({});
   const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
@@ -30,8 +30,10 @@ export default function ArchivoRojo() {
           console.error('Error al obtener datos de la API:', error);
         });
     };
+
     // Debounce fetchData by 500 milliseconds
     const debounceTimer = setTimeout(fetchData, 500);
+
     return () => {
       clearTimeout(debounceTimer);
     };
@@ -39,6 +41,10 @@ export default function ArchivoRojo() {
 
   const handlePageChange = (selectedPage) => {
     setCurrentPage(selectedPage.selected);
+  };
+
+  const handleSearch = (fieldName, fieldValue) => {
+    setSearchQuery((prevQuery) => ({ ...prevQuery, [fieldName]: fieldValue }));
   };
 
   return (
@@ -51,7 +57,23 @@ export default function ArchivoRojo() {
             <BackButton link={'/'} />
           </Grid>
           <Grid item xs={12} className="grid-item">
-            <DataTable fixedHeader={false} columns={columns} data={redFiles ? redFiles.data : []} />
+            <ArchivoSearch columns={columns} handleSearch={handleSearch} />
+          </Grid>
+
+          <Grid item xs={12} className="grid-item">
+            <DataTable
+              noHeader={true}
+              columns={columns}
+              data={redFiles ? redFiles.data : []}
+              customStyles={{
+                table: {
+                  padding: '0'
+                },
+                tableWrapper: {
+                  padding: '10px'
+                }
+              }}
+            />
           </Grid>
           <Grid item xs={12} className="grid-item">
             <Pagination

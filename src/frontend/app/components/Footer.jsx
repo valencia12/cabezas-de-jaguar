@@ -3,6 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 import Title from './Title';
 
 const Footer = () => (
+  <section>
   <div className="footter pt-16 md:px-14">
     <div className="flex flex-col">
       <div className="flex justify-start">
@@ -34,6 +35,7 @@ const Footer = () => (
       </div>
     </div>
   </div>
+  </section>
 );
 
 export default Footer;

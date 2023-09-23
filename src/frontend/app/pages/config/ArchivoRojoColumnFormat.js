@@ -5,7 +5,7 @@ import { styles } from './ArchivoRojoConstants';
 const columns = [
   {
     id: 'country_code',
-    name: 'Código de pais',
+    name: 'Código de país',
     selector: (row) => row.country_code,
     sortable: true,
     wrap: true
@@ -30,7 +30,7 @@ const columns = [
   },
   {
     id: 'title',
-    name: 'Titulo',
+    name: 'Título',
     selector: (row) => row.title,
     sortable: true,
     wrap: true

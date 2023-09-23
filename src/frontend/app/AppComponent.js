@@ -11,9 +11,7 @@ import NavigationDesktop from './components/NavigationDesktop';
 import 'react-tiny-fab/dist/styles.css';
 import 'aos/dist/aos.css';
 import './AppComponent.css';
-
-
-const redFormula = React.lazy(() => import('../public/assets/images/fede1.png'));
+import redFormula from '../public/assets/images/fede1.png';
 
 
 

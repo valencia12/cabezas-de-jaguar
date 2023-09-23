@@ -5,6 +5,7 @@ var PUBLIC_DIR = path.resolve(__dirname, 'src/frontend/public');
 var APP_DIR = path.resolve(__dirname, 'src/frontend/app');
 
 const dotenv = require('dotenv-webpack');
+require('dotenv').config();
 
 
 module.exports = {
@@ -65,5 +66,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: PUBLIC_DIR +'/index.html'
     })
-  ]
+  ],
+  devServer: {
+    port: parseInt(process.env.PORT) || 4000
+  }
 };

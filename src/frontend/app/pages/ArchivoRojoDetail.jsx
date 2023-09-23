@@ -3,13 +3,14 @@ import { useParams } from 'react-router-dom'; // Import useParams
 import { Fab } from 'react-tiny-fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import EmailIcon from '@mui/icons-material/Email';
+
 import Footer from '../components/Footer';
 import HeaderSection from '../components/HeaderSection';
 import { fetchRedFile } from '../api/request';
 import BackButton from '../components/BackButton';
 import EmailModal from '../components/EmailModal';
 
-import { Grid } from '@mui/material';
+import { Grid, Typography, InputLabel, Container } from '@mui/material';
 import { styles, top } from './config/ArchivoRojoConstants';
 import './ArchivoRojo.css';
 
@@ -57,37 +58,85 @@ export default function ArchivoRojoDetail() {
           </Grid>
           {data !== null && ( // Conditional rendering
             <>
+            
+            <Container className="grid-container">
               <Grid item xs={12} className="grid-item">
-                <p>Código de Referencia: {data.reference_code}</p>
-                <p>Título: {data.title}</p>
+                  <div className='large-title-cotainer'>
+                      <h2  className="title text-right md:text-lg md:text-center"
+                      style={{
+                      fontSize: '1.8em',
+                      justifyContent: 'center',
+                      color: 'white',
+                      background: 'var(--primary-color)',
+                      padding: '16px'
+                      }}>Detalles del Documento - {referenceCode}</h2>
+                      <br></br>
+                  </div>
               </Grid>
+              <Grid container spacing={2}>
 
-              <Grid item xs={6} className="grid-item">
-                <p>Código de País: {data.country_code}</p>
-                <p>Institución: {data.institution}</p>
-                <p>Dependencia: {data.dependency}</p>
-                <p>Tipo de Documento: {data.document_type}</p>
-                <p>
-                  Características Físicas:
-                  {data.physical_characteristics}
-                </p>
-              </Grid>
-              <Grid item xs={6} className="grid-item">
-                <p>Lugar y Fecha: {data.place_and_date}</p>
-                <p>Precedencia: {data.precedence}</p>
-                <p>Idioma: {data.language}</p>
-                <p>Volumen: {data.volume}</p>
-                <p>Notas: {data.notes}</p>
-              </Grid>
-              <Grid item xs={12} className="grid-item">
-                <p className="content-row">Contenido: {data.content}</p>
-              </Grid>
-              <Grid item xs={12} className="grid-item">
-                <button onClick={handleOpenModal}>
-                  Reservar <EmailIcon />
-                </button>
-                <EmailModal open={modalOpen} handleClose={handleCloseModal} formData={initialFormData}/>
-              </Grid>
+                  <Grid item xs={12} sm={6} md={4} className="grid-item">
+                    <InputLabel>Título:</InputLabel>
+                    <Typography variant="body1">{data.title}</Typography>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4} className="grid-item">
+                    <InputLabel>Código de País:</InputLabel>
+                    <Typography variant="body1">{data.country_code}</Typography>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4} className="grid-item">
+                    <InputLabel>Código de Referencia:</InputLabel>
+                    <Typography variant="body1">{data.reference_code}</Typography>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4} className="grid-item">
+                    <InputLabel>Institución:</InputLabel>
+                    <Typography variant="body1">{data.institution}</Typography>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4} className="grid-item">
+                    <InputLabel>Dependencia:</InputLabel>
+                    <Typography variant="body1">{data.dependency || 'Ninguna'}</Typography>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4} className="grid-item">
+                    <InputLabel>Tipo de Documento:</InputLabel>
+                    <Typography variant="body1">{data.document_type}</Typography>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4} className="grid-item">
+                    <InputLabel>Características Físicas:</InputLabel>
+                    <Typography variant="body1">{data.physical_characteristics}</Typography>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4} className="grid-item">
+                    <InputLabel>Lugar y Fecha:</InputLabel>
+                    <Typography variant="body1">{data.place_and_date}</Typography>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4} className="grid-item">
+                    <InputLabel>Precedencia:</InputLabel>
+                    <Typography variant="body1">{data.precedence}</Typography>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4} className="grid-item">
+                    <InputLabel>Idioma:</InputLabel>
+                    <Typography variant="body1">{data.language}</Typography>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4} className="grid-item">
+                    <InputLabel>Volumen:</InputLabel>
+                    <Typography variant="body1">{data.volume}</Typography>
+                  </Grid>
+                  <Grid item xs={12} className="grid-item">
+                    <InputLabel>Notas:</InputLabel>
+                    <Typography variant="body1">{data.notes}</Typography>
+                  </Grid>
+                  <Grid item xs={12} className="grid-item">
+                    <InputLabel>Contenido:</InputLabel>
+                    <Typography variant="body1" className="content-row">
+                      {data.content}
+                    </Typography>
+                  </Grid>
+                </Grid>
+            </Container>
+             <Grid item xs={12} className="grid-item">
+             <button onClick={handleOpenModal}>
+               Reservar <EmailIcon />
+             </button>
+             <EmailModal open={modalOpen} handleClose={handleCloseModal} formData={initialFormData}/>
+           </Grid>
             </>
           )}
         </Grid>
