@@ -20,6 +20,7 @@
     "dayjs": "^1.11.10",
     "dotenv-webpack": "^8.0.1",
     "express": "^4.18.2",
+    "file-saver": "^2.0.5",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
     "primereact": "^9.6.2",

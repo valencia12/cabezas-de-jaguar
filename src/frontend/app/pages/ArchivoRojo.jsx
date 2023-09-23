@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Fab } from 'react-tiny-fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import DataTable from 'react-data-table-component';
-import { fetchAllRedFiles } from '../api/request';
+import { fetchAllRedFiles, downloadPdf } from '../api/request';
 import Footer from '../components/Footer';
 import HeaderSection from '../components/HeaderSection';
 import columns from './config/ArchivoRojoColumnFormat';
 import { Grid } from '@mui/material';
 import BackButton from '../components/BackButton';
 import Pagination from '../components/Pagination';
+import { Download } from '@mui/icons-material';
 
 import { styles, top, TABLE_LIMIT } from './config/ArchivoRojoConstants';
 import './ArchivoRojo.css';
@@ -82,6 +83,11 @@ export default function ArchivoRojo() {
               tableLimit={TABLE_LIMIT}
               initialPage={currentPage}
             />
+          </Grid>
+          <Grid item xs={12} className="grid-item" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <button onClick={downloadPdf}>
+              <Download /> Descargar Cátalogo
+            </button>
           </Grid>
         </Grid>
       </section>

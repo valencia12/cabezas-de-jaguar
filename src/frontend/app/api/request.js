@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { saveAs } from 'file-saver';
 
 // eslint-disable-next-line no-undef
 const apiEndpoint = process.env.REACT_APP_API_ENDPOINT;
@@ -26,4 +27,21 @@ export const fetchRedFile = async (referenceCode) => {
 export const reserveRedFile = async (paylod) => {
   const response = await axios.post(`${apiUrl}/contact`, paylod);
   return response.data;
+};
+
+
+export const downloadPdf = () => {
+  axios
+    .get(`${apiUrl}/download-pd'`, {
+      responseType: 'blob'
+    })
+    .then((response) => {
+      // Create a Blob from the response data
+      const blob = new Blob([response.data], { type: 'application/pdf' });
+
+      saveAs(blob, 'Catálogo.pdf');
+    })
+    .catch((error) => {
+      console.error('Error downloading PDF:', error);
+    });
 };
