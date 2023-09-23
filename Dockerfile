@@ -17,8 +17,8 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install development dependencies (if needed)
-RUN npm install
+# Install dependencies
+RUN npm install 
 
 # Copy the source code
 COPY . ./
@@ -26,7 +26,26 @@ COPY . ./
 # Build the project
 RUN npm run build
 
+# Remove the development dependencies and unnecessary files
+RUN npm prune --production
 RUN rm -r src
+
+# Expose the port specified by the ENV variable
+EXPOSE $PORT
+
+# Stage 2: Production Image
+FROM node:current-alpine3.16 as production
+
+# Set the working directory
+WORKDIR /app
+
+# Copy only the production-ready files from the build stage
+COPY --from=build /app/package*.json ./
+COPY --from=build /app/server.js ./
+COPY --from=build /app/dist ./dist/
+
+# Install production dependencies
+RUN npm install --only=production
 
 # Expose the port specified by the ENV variable
 EXPOSE $PORT
