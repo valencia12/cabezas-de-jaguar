@@ -18,7 +18,7 @@ COPY . ./
 RUN npm install --verbose
 
 # Build the project
-RUN npm run build
+RUN npm run build --verbose
 
 RUN rm -r src
 
