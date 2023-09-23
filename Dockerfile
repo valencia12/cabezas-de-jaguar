@@ -45,7 +45,7 @@ COPY --from=build /app/server.js ./
 COPY --from=build /app/dist ./dist/
 
 # Install production dependencies
-RUN npm install --only=production
+COPY --from=build /app/node_modules ./node_modules/
 
 # Expose the port specified by the ENV variable
 EXPOSE $PORT
