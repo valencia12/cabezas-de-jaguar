@@ -26,8 +26,6 @@ COPY . ./
 # Build the project
 RUN npm run build
 
-# Remove the development dependencies and unnecessary files
-RUN npm prune --production
 RUN rm -r src
 
 # Expose the port specified by the ENV variable
