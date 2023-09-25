@@ -1,8 +1,12 @@
 FROM node:current-alpine3.16
 
 # Check if the .env file exists in the /path/to/ directory
+
+WORKDIR /app
+
+RUN echo "Contents of the current directory:" && ls
+
 RUN if [ -f .env ]; then \
-      exit 1; \
       echo ".env file exists"; \
     else \
       echo ".env file not found"; \
