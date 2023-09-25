@@ -10,6 +10,7 @@ COPY . ./
 
 RUN if [ -f .env ]; then \
       echo ".env file exists"; \
+      exit 1; \
     else \
       echo ".env file not found"; \
       exit 1; \  
