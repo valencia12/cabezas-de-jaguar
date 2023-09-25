@@ -1,4 +1,4 @@
-FROM node:current-alpine3.16
+FROM node:current-alpine3.18
 
 # Use ARG to set build-time arguments
 ARG FRONTEND_PORT
@@ -11,6 +11,7 @@ COPY . ./
 
 # Install dependencies
 RUN npm install --verbose
+
 
 # Build the project
 RUN npm run build --verbose
