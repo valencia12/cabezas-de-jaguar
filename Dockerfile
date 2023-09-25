@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . ./
 
 
-RUN if [ -f package.json ]; then \
+RUN if [ -f .env ]; then \
       echo ".env file exists"; \
       exit 1; \
     else \
