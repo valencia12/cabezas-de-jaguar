@@ -1,6 +1,10 @@
 FROM node:current-alpine3.16
 
-# Check if the .env file exists in the /path/to/ directory
+# Use ARG to set build-time arguments
+ARG FRONTEND_PORT
+
+# Set environment variables using ENV
+ENV PORT=$FRONTEND_PORT
 
 # Copy the source code
 COPY . ./
