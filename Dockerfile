@@ -6,6 +6,13 @@ ARG FRONTEND_PORT
 ENV PORT=$FRONTEND_PORT
 
 # Copy the source code
+COPY ./.env .
+COPY ./yarn.lock .
+COPY ./package.json .
+COPY ./webpack.config.prod .
+COPY ./postcss.config.js .
+COPY ./tailwind.config.js .
+COPY ./server.js .
 COPY ./dist .
 
 # Install dependencies
