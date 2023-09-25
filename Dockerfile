@@ -2,8 +2,6 @@ FROM node:current-alpine3.16
 
 # Check if the .env file exists in the /path/to/ directory
 
-WORKDIR /app
-
 # Copy the source code
 COPY . ./
 

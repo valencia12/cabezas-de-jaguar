@@ -15,6 +15,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
+  mode: 'development',
   performance: {
     hints: false,
     maxEntrypointSize: 512000,
@@ -64,7 +65,10 @@ module.exports = {
   plugins: [
     new dotenv(),
     new HtmlWebpackPlugin({
-      template: PUBLIC_DIR +'/index.html'
+      template: PUBLIC_DIR +'/index.html',
+      templateParameters: {
+        manifest: PUBLIC_DIR +'/manifest.json'
+      }
     })
   ],
   devServer: {

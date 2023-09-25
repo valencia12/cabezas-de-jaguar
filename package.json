@@ -40,8 +40,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start:dev": "webpack serve --mode development --open",
-    "build": "webpack --mode production",
+    "start:dev": "webpack serve --config webpack.config.dev.js --open",
+    "build": "webpack --config webpack.config.prod.js",
     "start:prod": "node server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
