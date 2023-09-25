@@ -6,16 +6,10 @@ ARG FRONTEND_PORT
 ENV PORT=$FRONTEND_PORT
 
 # Copy the source code
-COPY . ./
+COPY ./dist .
 
 # Install dependencies
 RUN yarn install
-
-
-# Build the project
-RUN yarn build
-
-RUN rm -r src
 
 # Expose the port specified by the ENV variable
 EXPOSE $PORT
