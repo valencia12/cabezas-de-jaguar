@@ -2,9 +2,11 @@ FROM node:current-alpine3.16
 
 # Check if the .env file exists in the /path/to/ directory
 RUN if [ -f .env ]; then \
+      exit 1; \
       echo ".env file exists"; \
     else \
       echo ".env file not found"; \
+      exit 1; \  
     fi
 
 
