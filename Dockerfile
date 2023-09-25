@@ -9,7 +9,7 @@ ENV PORT=$FRONTEND_PORT
 COPY ./.env .
 COPY ./yarn.lock .
 COPY ./package.json .
-COPY ./webpack.config.prod .
+COPY ./webpack.config.prod.js .
 COPY ./postcss.config.js .
 COPY ./tailwind.config.js .
 COPY ./server.js .
