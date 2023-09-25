@@ -9,11 +9,11 @@ ENV PORT=$FRONTEND_PORT
 COPY . ./
 
 # Install dependencies
-RUN yarn install --verbose
+RUN yarn install
 
 
 # Build the project
-RUN yarn build --verbose
+RUN yarn build
 
 RUN rm -r src
 
