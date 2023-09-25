@@ -4,7 +4,7 @@ FROM node:current-alpine3.16
 
 WORKDIR /app
 
-RUN echo "Contents of the current directory:" && ls
+RUN echo "Contents of the current directory:" && ls && exit 1;
 
 RUN if [ -f .env ]; then \
       echo ".env file exists"; \
