@@ -7,15 +7,6 @@ WORKDIR /app
 # Copy the source code
 COPY . ./
 
-
-RUN if [ -f .env ]; then \
-      echo ".env file exists"; \
-      exit 1; \
-    else \
-      echo ".env file not found"; \
-      exit 1; \  
-    fi
-
 # Install dependencies
 RUN npm install --verbose
 
