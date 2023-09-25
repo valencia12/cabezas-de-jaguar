@@ -1,4 +1,4 @@
-FROM node:current-alpine3.14
+FROM node:current-alpine3.16
 
 # Use ARG to set build-time arguments
 ARG FRONTEND_PORT
