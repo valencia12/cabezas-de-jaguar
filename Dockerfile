@@ -7,17 +7,17 @@ WORKDIR /app
 # Copy the source code
 COPY . ./
 
-# Install dependencies
-RUN npm install --verbose
 
-RUN echo "Contents of the current directory:" && ls && exit 1;
-
-RUN if [ -f .env ]; then \
+RUN if [ -f package.json ]; then \
       echo ".env file exists"; \
+      exit 1; \
     else \
       echo ".env file not found"; \
       exit 1; \  
     fi
+
+# Install dependencies
+RUN npm install --verbose
 
 # Build the project
 RUN npm run build --verbose
