@@ -32,7 +32,7 @@ export const reserveRedFile = async (paylod) => {
 
 export const downloadPdf = () => {
   axios
-    .get(`${apiUrl}/download-pd'`, {
+    .get(`${apiUrl}/download-pdf`, {
       responseType: 'blob'
     })
     .then((response) => {
