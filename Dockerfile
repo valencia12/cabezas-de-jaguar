@@ -2,7 +2,6 @@ FROM node:alpine
 
 # Use ARG to set build-time arguments
 ARG FRONTEND_PORT
-
 # Set environment variables using ENV
 ENV PORT=$FRONTEND_PORT
 
@@ -10,11 +9,11 @@ ENV PORT=$FRONTEND_PORT
 COPY . ./
 
 # Install dependencies
-RUN npm install --verbose
+RUN yarn install --verbose
 
 
 # Build the project
-RUN npm run build --verbose
+RUN yarn build --verbose
 
 RUN rm -r src
 
@@ -22,4 +21,4 @@ RUN rm -r src
 EXPOSE $PORT
 
 # Command to start your application
-CMD ["sh", "-c", "npm run start:prod"]
+CMD ["sh", "-c", "yarn start:prod"]
