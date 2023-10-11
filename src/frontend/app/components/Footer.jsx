@@ -4,7 +4,7 @@ import Title from './Title';
 
 const Footer = () => (
   <section>
-  <div className="footter pt-16 md:px-14">
+  <div className="footter">
     <div className="flex flex-col">
       <div className="flex justify-start">
         <Title
