@@ -12,23 +12,23 @@ const Footer = () => (
                 color: '#FFF',
               }}
             >
-              ASCJ
+              ACCJ
             </h3>
           }
         />
       </div>
 
       <div className="grid gap-2.5 grid-cols-3 mt-12 pl-8 pr-8 link-container">
-        <HashLink smooth to="#what-we-do-section">
+        <HashLink smooth to="/">
           <h3>Cabezas de Jaguar</h3>
         </HashLink>
-        <HashLink smooth to="#partners">
+        <HashLink smooth to="/archivo">
           <h3>Archivo Rojo</h3>
         </HashLink>
-        <HashLink smooth to="#contactUs">
+        <HashLink smooth to="#">
           <h3>Centro Cultural</h3>
         </HashLink>
-        <HashLink smooth to="#keyprojects">
+        <HashLink smooth to="#">
           <h3>Quienes somos?</h3>
         </HashLink>
       </div>

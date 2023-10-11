@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Aos from 'aos';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { Fab } from 'react-tiny-fab';
 import Title from './components/Title';
 import Title2 from './components/Title2';
@@ -63,9 +63,7 @@ function App() {
         </nav>
         <div className="header-container">
           <div className="md:flex md:justify-center">
-            <div className="md:hidden">
-             
-            </div>
+            <div className="md:hidden" />
             <div
               className="large-title-container"
               style={{
@@ -272,7 +270,8 @@ function App() {
         <Title
           title={
             <>
-              Archivo <br className="md:hidden" /> <Link to='/archivo'> Rojo: Click Aqui </Link>
+              Archivo <br className="md:hidden" />{' '}
+              <Link to="/archivo"> Rojo: Click Aqui </Link>
             </>
           }
         />
