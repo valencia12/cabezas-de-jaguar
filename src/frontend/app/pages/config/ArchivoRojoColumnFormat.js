@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { styles } from './ArchivoRojoConstants';
+import { styles, redFileLabels } from './ArchivoRojoConstants';
 
 const columns = [
   {
     id: 'country_code',
-    name: 'Código de país',
+    name: redFileLabels.countryCode,
     selector: (row) => row.country_code,
     sortable: true,
     wrap: true
   },
   {
     id: 'reference_code',
-    name: 'Código de referencia',
+    name: redFileLabels.referenceCode,
     selector: (row) => (
       <Link style={styles.hyperlinkStyle} to={`/archivo/${row.reference_code}`}>
         {row.reference_code}
@@ -23,49 +23,49 @@ const columns = [
   },
   {
     id: 'institution',
-    name: 'Institución',
+    name: redFileLabels.institution,
     selector: (row) => row.institution,
     sortable: true,
     wrap: true
   },
   {
     id: 'title',
-    name: 'Título',
+    name: redFileLabels.title,
     selector: (row) => row.title,
     sortable: true,
     wrap: true
   },
   {
     id: 'place_and_date',
-    name: 'Lugar y fecha',
+    name: redFileLabels.placeDate,
     selector: (row) => row.place_and_date,
     sortable: true,
     wrap: true
   },
   {
     id: 'precedence',
-    name: 'Precedente',
+    name: redFileLabels.precedence,
     selector: (row) => row.precedence,
     sortable: true,
     wrap: true
   },
   {
     id: 'volume',
-    name: 'Volumen',
+    name: redFileLabels.volume,
     selector: (row) => row.volume,
     sortable: true,
     wrap: true
   },
   {
     id: 'language',
-    name: 'Lenguaje',
+    name: redFileLabels.language,
     selector: (row) => row.language,
     sortable: true,
     wrap: true
   },
   {
     id: 'content',
-    name: 'Contenido',
+    name: redFileLabels.content,
     selector: (row) => row.content,
     sortable: true,
     wrap: true

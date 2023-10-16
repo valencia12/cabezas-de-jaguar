@@ -40,7 +40,7 @@ module.exports = {
         'postcss-loader']
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        test: /\.(png|jpg|jpeg|gif|svg|ico)$/,
         use: {
           loader: 'file-loader',
           options: {
@@ -70,7 +70,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: PUBLIC_DIR +'/index.html',
       templateParameters: {
-        manifest: PUBLIC_DIR +'/manifest.json'
+        manifest: PUBLIC_DIR +'/manifest.json',
+        favicon: PUBLIC_DIR +'/favicon.ico'
       }
     })
   ],

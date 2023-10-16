@@ -4,7 +4,7 @@ import Title from './Title';
 
 const Footer = () => (
   <section>
-  <div className="footter pt-16 md:px-14">
+  <div className="footter">
     <div className="flex flex-col">
       <div className="flex justify-start">
         <Title
@@ -15,22 +15,22 @@ const Footer = () => (
         />
       </div>
 
-      <div className="grid gap-2.5 grid-cols-3 mt-12 pl-8 pr-8 link-container">
-        <HashLink smooth to="#what-we-do-section">
+      <div className="grid gap-2.5 grid-cols-6 mt-6 pl-8 pr-8 link-container">
+        <HashLink smooth to="/">
           <h3>Cabezas de Jaguar</h3>
         </HashLink>
-        <HashLink smooth to="#partners">
+        <HashLink smooth to="/archivo">
           <h3>Archivo Rojo</h3>
         </HashLink>
-        <HashLink smooth to="#contactUs">
+        <HashLink smooth to="#">
           <h3>Centro Cultural</h3>
         </HashLink>
-        <HashLink smooth to="#keyprojects">
+        <HashLink smooth to="#">
           <h3>Quienes somos?</h3>
         </HashLink>
       </div>
 
-      <div className="flex justify-end mt-16">
+      <div className="flex justify-end mt-2">
         <span className="cpy">Copyright ACCJ</span>
       </div>
     </div>

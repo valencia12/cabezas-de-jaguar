@@ -113,9 +113,13 @@ function AppComponent() {
           </div>
         </div>
         <div id="formula-image-container" data-aos="fade-right">
-          <img className="hidden sm:block" src={redFormula} alt="dr-fede" />
-          <img className="block sm:hidden" src={redFormula} alt="dr-fede" />
-        </div>
+            <img
+              style={{
+                width: '305%'
+              }}
+               src={redFormula} alt="dr-fede" />
+
+          </div>
         {/* <img className='circle-fill-primary' src={circleFillPrimary} /> */}
       </section>
       <section className="union-w-m">
@@ -160,16 +164,19 @@ function AppComponent() {
           </div>
         </section>
       </section>
-      <div className="flex flex-col-reverse md:flex-row-reverse md:justify-between md:items-center">
+      <div className=" md:flex-row-reverse md:justify-between md:items-center">
         <img
           style={{
-            height: '35%'
+            height: '55%',
+            width: '50%',
+            margin: 'auto',
+            marginTop: '5%'
           }}
           alt="img"
           data-aos="fade-right"
           src="https://i0.wp.com/www.diariocolatino.com/wp-content/uploads/2015/08/toque-de-piedra-decima-entrega-nueva-web.jpg?zoom=2&resize=660%2C330&ssl=1"
         />
-        <section className="idk mt-5 md:mt-0">
+        <section className="mt-5 md:mt-0">
           <p id="personal-inspiration" data-aos="fade-left">
             Desde el año 2006 el proyecto ha registrado 69 monumentos de la tradición escultórica
             Cabeza de Jaguar en los actuales,
@@ -245,7 +252,9 @@ function AppComponent() {
           }
         />
       </section>
-      <Footer />
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }

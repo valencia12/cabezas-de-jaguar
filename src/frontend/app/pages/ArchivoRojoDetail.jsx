@@ -11,7 +11,7 @@ import BackButton from '../components/BackButton';
 import EmailModal from '../components/EmailModal';
 
 import { Grid, Typography, InputLabel, Container } from '@mui/material';
-import { styles, top } from './config/ArchivoRojoConstants';
+import { styles, top, redFileLabels } from './config/ArchivoRojoConstants';
 import './ArchivoRojo.css';
 
 // Rest of your component code...
@@ -76,55 +76,51 @@ export default function ArchivoRojoDetail() {
               <Grid container spacing={2}>
 
                   <Grid item xs={12} sm={6} md={4} className="grid-item">
-                    <InputLabel>Título:</InputLabel>
+                    <InputLabel> {redFileLabels.title}:</InputLabel>
                     <Typography variant="body1">{data.title}</Typography>
                   </Grid>
                   <Grid item xs={12} sm={6} md={4} className="grid-item">
-                    <InputLabel>Código de País:</InputLabel>
+                    <InputLabel>{redFileLabels.countryCode}:</InputLabel>
                     <Typography variant="body1">{data.country_code}</Typography>
                   </Grid>
                   <Grid item xs={12} sm={6} md={4} className="grid-item">
-                    <InputLabel>Código de Referencia:</InputLabel>
+                    <InputLabel>{redFileLabels.referenceCode}:</InputLabel>
                     <Typography variant="body1">{data.reference_code}</Typography>
                   </Grid>
                   <Grid item xs={12} sm={6} md={4} className="grid-item">
-                    <InputLabel>Institución:</InputLabel>
+                    <InputLabel>{redFileLabels.institution}:</InputLabel>
                     <Typography variant="body1">{data.institution}</Typography>
                   </Grid>
                   <Grid item xs={12} sm={6} md={4} className="grid-item">
-                    <InputLabel>Dependencia:</InputLabel>
+                    <InputLabel>{redFileLabels.dependency}:</InputLabel>
                     <Typography variant="body1">{data.dependency || 'Ninguna'}</Typography>
                   </Grid>
                   <Grid item xs={12} sm={6} md={4} className="grid-item">
-                    <InputLabel>Tipo de Documento:</InputLabel>
+                    <InputLabel>{redFileLabels.documentType}:</InputLabel>
                     <Typography variant="body1">{data.document_type}</Typography>
                   </Grid>
                   <Grid item xs={12} sm={6} md={4} className="grid-item">
-                    <InputLabel>Características Físicas:</InputLabel>
+                    <InputLabel>{redFileLabels.physicalCharacteristics}:</InputLabel>
                     <Typography variant="body1">{data.physical_characteristics}</Typography>
                   </Grid>
                   <Grid item xs={12} sm={6} md={4} className="grid-item">
-                    <InputLabel>Lugar y Fecha:</InputLabel>
+                    <InputLabel>{redFileLabels.placeDate}:</InputLabel>
                     <Typography variant="body1">{data.place_and_date}</Typography>
                   </Grid>
                   <Grid item xs={12} sm={6} md={4} className="grid-item">
-                    <InputLabel>Precedencia:</InputLabel>
+                    <InputLabel>{redFileLabels.precedence}:</InputLabel>
                     <Typography variant="body1">{data.precedence}</Typography>
                   </Grid>
                   <Grid item xs={12} sm={6} md={4} className="grid-item">
-                    <InputLabel>Idioma:</InputLabel>
+                    <InputLabel>{redFileLabels.language}:</InputLabel>
                     <Typography variant="body1">{data.language}</Typography>
                   </Grid>
                   <Grid item xs={12} sm={6} md={4} className="grid-item">
-                    <InputLabel>Volumen:</InputLabel>
+                    <InputLabel>{redFileLabels.volume}:</InputLabel>
                     <Typography variant="body1">{data.volume}</Typography>
                   </Grid>
                   <Grid item xs={12} className="grid-item">
-                    <InputLabel>Notas:</InputLabel>
-                    <Typography variant="body1">{data.notes}</Typography>
-                  </Grid>
-                  <Grid item xs={12} className="grid-item">
-                    <InputLabel>Contenido:</InputLabel>
+                    <InputLabel>{redFileLabels.content}:</InputLabel>
                     <Typography variant="body1" className="content-row">
                       {data.content}
                     </Typography>

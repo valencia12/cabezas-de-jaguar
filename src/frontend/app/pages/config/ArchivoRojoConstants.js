@@ -15,6 +15,23 @@ const buttonStyle = {
   cursor: 'pointer'
 };
 
+
+const redFileLabels = {
+  countryCode : 'Código de país',
+  referenceCode : 'Código de referencia',
+  institution : 'Subfondo',
+  dependency: 'Serie',
+  documentType: 'Subserie',
+  title : 'Título',
+  placeDate : 'Lugar y Fecha',
+  precedence : 'Productor/ Procedencia',
+  volume : 'Volumen',
+  language : 'Lengua',
+  content : 'Alcance y contenido', 
+  physicalCharacteristics : 'Características Físicas'
+};
+
+
 const styles = {
   mainButtonStyle,
   hyperlinkStyle,
@@ -33,4 +50,4 @@ const goBack = () => {
   window.history.back();
 };
 
-export { styles, TABLE_LIMIT, top, goBack };
+export { styles, TABLE_LIMIT, top, goBack, redFileLabels };

@@ -40,7 +40,7 @@ module.exports = {
         'postcss-loader']
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        test: /\.(png|jpe?g|gif|svg|ico)$/i,
         use: {
           loader: 'file-loader',
           options: {
@@ -66,12 +66,10 @@ module.exports = {
     new dotenv(),
     new HtmlWebpackPlugin({
       template: PUBLIC_DIR +'/index.html',
-      templateParameters: {
-        manifest: PUBLIC_DIR +'/manifest.json'
-      }
+      favicon: PUBLIC_DIR +'/favicon.ico'
     })
   ],
   devServer: {
-    port: parseInt(process.env.PORT) || 4000
+    port: parseInt(process.env.PORT) || 9001
   }
 };
