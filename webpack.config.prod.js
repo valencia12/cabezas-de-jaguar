@@ -69,10 +69,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: PUBLIC_DIR +'/index.html',
-      templateParameters: {
-        manifest: PUBLIC_DIR +'/manifest.json',
-        favicon: PUBLIC_DIR +'/favicon.ico'
-      }
+      favicon: PUBLIC_DIR +'/favicon.ico'
     })
   ],
   devServer: {
