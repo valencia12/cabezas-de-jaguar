@@ -82,7 +82,7 @@ function AppComponent() {
 
       {/* Objetivos de la Asociación */}
       <section className="goals-section mt-20 px-6 text-center">
-        <Title title="Asociación Cultural Cabezas de Jaguar:" titleStyle={{ fontSize: '2em' }} />
+        <Title title="Asociación Cultural Cabezas de Jaguar" titleStyle={{ fontSize: '2em' }} />
         <Title title="ACCJ Fines y objetivos:" titleStyle={{ fontSize: '1.8em', marginTop: '10px' }} />
         <ul className="goals-list mt-6 text-sm md:text-lg">
           <li>Fortalecer la identidad cultural como base de mejora en la calidad de vida en El Salvador y Mesoamérica.</li>
