@@ -1,5 +1,4 @@
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Aos from 'aos';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { Link } from 'react-router-dom';
@@ -13,248 +12,94 @@ import 'aos/dist/aos.css';
 import './AppComponent.css';
 import redFormula from '../public/assets/images/fede1.png';
 
-
-
-const top = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth' // for smoothly scrolling
-  });
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
 function AppComponent() {
-  const styles = {
-    backgroundColor: '#485922',
-    marginLeft: '75%'
-  };
-
   useEffect(() => {
     Aos.init({ duration: 1200 });
   }, []);
 
   return (
     <div style={{ overflowX: 'hidden' }}>
-      <Fab mainButtonStyles={styles} icon={<KeyboardArrowUpIcon />} onClick={top} />
-      <section className="banner-header" alt="Bg-goventuresbuilds">
+      {/* Botón para volver arriba */}
+      <Fab mainButtonStyles={{ backgroundColor: '#485922', marginLeft: '75%' }} icon={<KeyboardArrowUpIcon />} onClick={scrollToTop} />
+
+      {/* Encabezado y Navegación */}
+      <header className="banner-header flex flex-col items-center p-4">
         <div className="blue-layer" />
-        <nav>
+        <nav className="w-full mb-4">
           <NavigationDesktop />
         </nav>
-        <div className="header-container">
-          <div className="md:flex md:justify-center">
-            <div className="md:hidden"></div>
-            <div
-              className="large-title-container"
-              style={{
-                zIndex: '300',
-                borderRadius: '3px',
-                opacity: '0.9'
-              }}
-            >
-              <h3
-                className="title text-right md:text-lg md:text-center"
-                style={{
-                  fontSize: '1.8em',
-                  justifyContent: 'center',
-                  color: 'white'
-                }}
-              >
-                Pasados y Futuro <br />
-              </h3>
-              <br />
-              <div
-                style={{
-                  display: 'flex',
-                  border: '3px solid white',
-                  borderRadius: '5px',
-                  fontSize: '1em'
-                }}
-              >
-                <h3 className="md:text-center">
-                  <span
-                    style={{
-                      fontSize: '1.8em',
-                      justifyContent: 'center',
-                      color: 'white'
-                    }}
-                  >
-                    Investigaciones del dr Federico Paredes Umaña sobre el período preclásico en el
-                    sureste mesoamericano y la tradición escultórica Cabezas de Jaguar
-                  </span>
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="formula-section flex flex-col lg:flex-row-reverse">
-        <div
-          data-aos="fade-left"
-          className="pt-0 lg:mt-24 xl:mt-32 sizeXl"
-          style={{
-            marginRight: '10%'
-          }}
-        >
-          <div
-            style={{
-              marginTop: '5em'
-            }}
-          >
-            <Title2
-              title={
-                <>
-                  <span style={{}} className="md:text-6xl">
-                    Proyecto arqueológico Cabezas de Jaguar
-                  </span>
-                  <br /> <span className="md:text-4xl"> Cabezas de Jaguar, pasado y futuro </span>
-                </>
-              }
-            />
-          </div>
-        </div>
-        <div id="formula-image-container" data-aos="fade-right">
-            <img
-              style={{
-                width: '305%'
-              }}
-               src={redFormula} alt="dr-fede" />
-
-          </div>
-        {/* <img className='circle-fill-primary' src={circleFillPrimary} /> */}
-      </section>
-      <section className="union-w-m">
-        <section className="w-full">
-          <section id="what-we-do-section">
-            {/* <Title title="ACCJ" dark /> */}
-            <div className="mt-10 lg:mb-0 md:mx-20">
-              <p className="cp px-4">
-                El Proyecto Arqueológico Cabezas de Jaguar es un esfuerzo académico y cultural
-                fundado por el Dr. Federico Paredes Umaña que busca visibilizar el legado de los
-                pueblos originarios del occidente y centro de El Salvador desde una perspectiva,
-                pionera en el país, de Arqueología Social e Interculturalidad.
-              </p>
-            </div>
-          </section>
-          <div className="accent-bg md:flex md:justify-between md:pt-2  relative">
-            <div className="flex justify-center md:items-center">
-              <p
-                className="hidden sm:block text-white pt-8 md:pt-0 text-center md:text-left md:text-sm lg:text-xl pb-8 md:px-20"
-                data-aos="fade-right"
-              >
-                <b className="md:text-lg lg:text-2xl">
-                  La exposición Cabezas de Jaguar, pasado y futuro busca disminuir el ocultamiento
-                  de la tradición, la exclusión social y la vulnerabilidad del patrimonio cultural
-                  que sufre la población de El Salvador.{' '}
-                </b>
-              </p>
-              <p
-                className="block sm:hidden text-white pt-8 md:pt-0 text-center md:text-left md:text-sm lg:text-xl pb-8 md:px-20"
-                data-aos="fade-right"
-              >
-                <b className="md:text-lg lg:text-2xl">
-                  Desde el año 2006 el proyecto ha registrado 69 monumentos de la tradición
-                  escultórica Cabeza de Jaguar en los actuales,
-                </b>{' '}
-                Departamentos de Santa Ana, Sonsonate, Ahuachapán y San Salvador.
-              </p>
-            </div>
-            <div data-aos="fade" />
-
-            {/** MOLECULA DE ENMEDIO */}
-          </div>
-        </section>
-      </section>
-      <div className=" md:flex-row-reverse md:justify-between md:items-center">
-        <img
-          style={{
-            height: '55%',
-            width: '50%',
-            margin: 'auto',
-            marginTop: '5%'
-          }}
-          alt="img"
-          data-aos="fade-right"
-          src="https://i0.wp.com/www.diariocolatino.com/wp-content/uploads/2015/08/toque-de-piedra-decima-entrega-nueva-web.jpg?zoom=2&resize=660%2C330&ssl=1"
-        />
-        <section className="mt-5 md:mt-0">
-          <p id="personal-inspiration" data-aos="fade-left">
-            Desde el año 2006 el proyecto ha registrado 69 monumentos de la tradición escultórica
-            Cabeza de Jaguar en los actuales,
-            <b className="text-3xl">
-              Departamentos de Santa Ana, Sonsonate, Ahuachapán y San Salvador.
-            </b>
+        <h1 className="main-title text-white" style={{ fontSize: '2em', margin: '10px 0', opacity: 0.9 }}>
+            Pasados y Futuro
+          </h1>
+        <div className="header-container text-center">
+          
+          <p className="subtitle text-white" style={{ fontSize: '1.2em', maxWidth: '90%', margin: '0 auto' }}>
+            Investigaciones del Dr. Federico Paredes Umaña sobre el período preclásico en el sureste mesoamericano y la tradición escultórica Cabezas de Jaguar.
           </p>
-        </section>
-        <div data-aos="fade" />
-      </div>
-
-      <section id="#opport" className="relative mt-20 sm:mt-24 op-container">
-        <Title
-          title={
-            <>
-              Asociación Cultural <br className="md:hidden" /> Cabezas de Jaguar:
-            </>
-          }
-          titleStyle={{
-            fontSize: '2em'
-          }}
-        />
-        <Title
-          titleStyle={{
-            fontSize: '2em'
-          }}
-          title={
-            <>
-              ACCJ <br /> Fines u objetivos:
-            </>
-          }
-        />
-        <div
-          style={{
-            textAlign: 'center',
-            display: 'flex',
-            justifyContent: 'center'
-          }}
-        >
-          <ul>
-            <li>
-              Fortalecer la identidad cultural como fundamento de la mejora de la calidad de vida de
-              la población salvadoreña, centroamericana y mesoamericana.
-            </li>
-            <li>
-              Promover la creación e implementación del modelo de gestión comunitaria del patrimonio
-              cultural con énfasis en la participación de pueblos indígenas.
-            </li>
-            <li>
-              Desarrollar e implementar procesos educativos, formativos y de diálogo de saberes
-              vinculados a la cultura.
-            </li>
-            <li>
-              Impulsar, diseñar, asesorar y realizar investigaciones de alta calidad relacionadas
-              con la cultura la identidad y el patrimonio cultural.
-            </li>
-            <li>
-              Promover, difundir, visibilizar y publicar contenidos relacionados con los procesos
-              culturales, el patrimonio cultural y el fortalecimiento de la identidad salvadoreña,
-              centroamericana y mesoamericana.
-            </li>
-          </ul>
         </div>
-        <Title
-          title={
-            <>
-              Archivo <br className="md:hidden" />{' '}
-              <Link onClick={top} to="/archivo">
-                {' '}
-                Rojo: Click Aqui{' '}
-              </Link>
-            </>
-          }
-        />
+      </header>
+
+      {/* Sección de Proyecto */}
+      <section className="project-section flex flex-col lg:flex-row items-center mt-10">
+        <div data-aos="fade-right" className="project-image-container w-full lg:w-1/2 flex justify-center">
+          <img src={redFormula} alt="dr-fede" style={{ maxWidth: '100%', height: 'auto', padding: '10px' }} />
+        </div>
+        <div data-aos="fade-left" className="project-description w-full lg:w-1/2 text-center lg:text-left p-6">
+          <Title2 title={<><span>Proyecto Arqueológico Cabezas de Jaguar</span><br /><span>Cabezas de Jaguar, pasado y futuro</span></>} />
+        </div>
       </section>
-      <div>
-        <Footer />
-      </div>
+
+      {/* Descripción de Proyecto */}
+      <section className="description-section bg-light py-10 px-6 text-center">
+        <p className="project-text text-md md:text-lg">
+          El Proyecto Arqueológico Cabezas de Jaguar es un esfuerzo académico y cultural fundado por el Dr. Federico Paredes Umaña que busca visibilizar el legado de los pueblos originarios del occidente y centro de El Salvador desde una perspectiva pionera de Arqueología Social e Interculturalidad.
+        </p>
+        <p className="additional-text  mt-6 md:text-xl">
+          La exposición Cabezas de Jaguar, pasado y futuro, busca disminuir el ocultamiento de la tradición, la exclusión social y la vulnerabilidad del patrimonio cultural en El Salvador.
+        </p>
+      </section>
+
+      {/* Imagen e Inspiración */}
+      <section className="inspiration-section flex flex-col md:flex-row items-center justify-between mt-10 px-6">
+        <img
+          src="https://i0.wp.com/www.diariocolatino.com/wp-content/uploads/2015/08/toque-de-piedra-decima-entrega-nueva-web.jpg?zoom=2&resize=660%2C330&ssl=1"
+          alt="img"
+          className="inspiration-image"
+          style={{ maxWidth: '50%', height: 'auto', padding: '10px' }}
+          data-aos="fade-right"
+        />
+        <div className="inspiration-text text-center md:text-left md:max-w-lg" data-aos="fade-left">
+          <p>
+            Desde el año 2006 el proyecto ha registrado 69 monumentos de la tradición escultórica Cabeza de Jaguar en los actuales
+            <b className="text-lg"> Departamentos de Santa Ana, Sonsonate, Ahuachapán y San Salvador.</b>
+          </p>
+        </div>
+      </section>
+
+      {/* Objetivos de la Asociación */}
+      <section className="goals-section mt-20 px-6 text-center">
+        <Title title="Asociación Cultural Cabezas de Jaguar:" titleStyle={{ fontSize: '2em' }} />
+        <Title title="ACCJ Fines y objetivos:" titleStyle={{ fontSize: '1.8em', marginTop: '10px' }} />
+        <ul className="goals-list mt-6 text-sm md:text-lg">
+          <li>Fortalecer la identidad cultural como base de mejora en la calidad de vida en El Salvador y Mesoamérica.</li>
+          <li>Promover la gestión comunitaria del patrimonio cultural con participación indígena.</li>
+          <li>Desarrollar e implementar procesos educativos y culturales.</li>
+          <li>Realizar investigaciones de alta calidad sobre identidad y patrimonio cultural.</li>
+          <li>Visibilizar y publicar contenidos relacionados con el patrimonio cultural.</li>
+        </ul>
+      </section>
+
+      {/* Archivo Rojo */}
+      <section className="archive-section text-center py-10">
+        <Title title={<><span>Archivo</span><Link onClick={scrollToTop} to="/archivo" className="link"> Rojo: Click Aquí </Link></>} />
+      </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
