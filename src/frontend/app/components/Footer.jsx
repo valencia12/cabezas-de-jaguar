@@ -15,7 +15,7 @@ const Footer = () => (
         />
       </div>
 
-      <div className="grid gap-2.5 grid-cols-6 mt-6 pl-8 pr-8 link-container">
+      <div className="grid gap-4 grid-cols-5 mt-6 pl-8 link-container">
         <HashLink smooth to="/">
           <h3>Cabezas de Jaguar</h3>
         </HashLink>
