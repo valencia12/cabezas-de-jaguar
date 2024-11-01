@@ -33,10 +33,10 @@ function AppComponent() {
           <NavigationDesktop />
         </nav>
         <h1 className="main-title text-white" style={{ fontSize: '2em', margin: '10px 0', opacity: 0.9 }}>
-            Pasados y Futuro
-          </h1>
+          Pasados y Futuro
+        </h1>
         <div className="header-container text-center">
-          
+
           <p className="subtitle text-white" style={{ fontSize: '1.2em', maxWidth: '90%', margin: '0 auto' }}>
             Investigaciones del Dr. Federico Paredes Umaña sobre el período preclásico en el sureste mesoamericano y la tradición escultórica Cabezas de Jaguar.
           </p>
@@ -69,10 +69,20 @@ function AppComponent() {
           src="https://i0.wp.com/www.diariocolatino.com/wp-content/uploads/2015/08/toque-de-piedra-decima-entrega-nueva-web.jpg?zoom=2&resize=660%2C330&ssl=1"
           alt="img"
           className="inspiration-image"
-          style={{ maxWidth: '50%', height: 'auto', padding: '10px' }}
+          style={{
+            width: '100%', // Ocupa el ancho completo en dispositivos móviles
+            maxWidth: '60%', // Tamaño máximo en pantallas grandes
+            height: '90%', // Ajuste de altura automático
+            padding: '10px',
+            borderRadius: '8px' // Opcional: bordes redondeados para mejorar el aspecto
+          }}
           data-aos="fade-right"
         />
-        <div className="inspiration-text text-center md:text-left md:max-w-lg" data-aos="fade-left">
+        <div className="inspiration-text text-center md:text-left md:max-w-lg" data-aos="fade-left"
+          style={{
+            paddingTop:'10%'
+          }}
+        >
           <p>
             Desde el año 2006 el proyecto ha registrado 69 monumentos de la tradición escultórica Cabeza de Jaguar en los actuales
             <b className="text-lg"> Departamentos de Santa Ana, Sonsonate, Ahuachapán y San Salvador.</b>

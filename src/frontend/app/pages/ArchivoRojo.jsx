@@ -77,18 +77,18 @@ export default function ArchivoRojo() {
             />
           </Grid>
           <Grid item xs={12} className="grid-item">
-            <Pagination
+            {/* <Pagination
               data={redFiles}
               handlePageChange={handlePageChange}
               tableLimit={TABLE_LIMIT}
               initialPage={currentPage}
-            />
+            /> */}
           </Grid>
-          <Grid item xs={12} className="grid-item" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          {/* <Grid item xs={12} className="grid-item" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <button onClick={downloadPdf}>
               <Download /> Descargar Cátalogo
             </button>
-          </Grid>
+          </Grid> */}
         </Grid>
       </section>
       <Footer />
