@@ -19,7 +19,7 @@ export default function ArchivoRojo() {
   const [redFiles, setRedFiles] = useState(null);
   const [searchQuery, setSearchQuery] = useState({});
   const [currentPage, setCurrentPage] = useState(0);
-
+  const [currentPage1, setCurrentPage1] = useState(0);
   useEffect(() => {
     const fetchData = () => {
       const searchParams = { ...searchQuery, page: currentPage, limit: TABLE_LIMIT };
