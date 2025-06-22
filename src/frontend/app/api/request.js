@@ -2,12 +2,11 @@ import axios from 'axios';
 import { saveAs } from 'file-saver';
 
 // eslint-disable-next-line no-undef
-const apiEndpoint = process.env.REACT_APP_API_ENDPOINT;
+const apiEndpoint = "asociacioncabezasdejaguar.com/api";
 // eslint-disable-next-line no-undef
 const https = process.env.REACT_APP_HTTPS;
 
 const apiUrl = `${https}://${apiEndpoint}/red-file`;
-
 export const fetchAllRedFiles = async (searchParams) => {
   const { page = 0, limit = 50 } = searchParams;
   const params = {

@@ -6,7 +6,7 @@ import { fetchAllRedFiles, downloadPdf } from '../api/request';
 import Footer from '../components/Footer';
 import HeaderSection from '../components/HeaderSection';
 import columns from './config/ArchivoRojoColumnFormat';
-import { Grid } from '@mui/material';
+import { CircularProgress, Grid, Typography } from '@mui/material';
 import BackButton from '../components/BackButton';
 import Pagination from '../components/Pagination';
 import { Download } from '@mui/icons-material';
@@ -16,6 +16,7 @@ import './ArchivoRojo.css';
 import ArchivoSearch from './ArchivoSearch';
 
 export default function ArchivoRojo() {
+  const [loading, setLoading] = useState(true);
   const [redFiles, setRedFiles] = useState(null);
   const [searchQuery, setSearchQuery] = useState({});
   const [currentPage, setCurrentPage] = useState(0);
@@ -26,9 +27,11 @@ export default function ArchivoRojo() {
       fetchAllRedFiles(searchParams)
         .then((apiData) => {
           setRedFiles(apiData);
+          setLoading(false);
         })
         .catch((error) => {
           console.error('Error al obtener datos de la API:', error);
+          setLoading(false);
         });
     };
 
@@ -48,6 +51,9 @@ export default function ArchivoRojo() {
     setSearchQuery((prevQuery) => ({ ...prevQuery, [fieldName]: fieldValue }));
   };
 
+
+
+
   return (
     <div>
       <Fab mainButtonStyles={styles.mainButtonStyle} icon={<KeyboardArrowUpIcon />} onClick={top} />
@@ -62,33 +68,47 @@ export default function ArchivoRojo() {
           </Grid>
 
           <Grid item xs={12} className="grid-item">
-            <DataTable
-              noHeader={true}
-              columns={columns}
-              data={redFiles ? redFiles.data : []}
-              customStyles={{
-                table: {
-                  padding: '0'
-                },
-                tableWrapper: {
-                  padding: '10px'
-                }
-              }}
-            />
+            {loading ? (
+              <div style={{ textAlign: 'center', padding: '40px 0' }}>
+                <CircularProgress />
+              </div>
+            ) : !redFiles || !redFiles.data || redFiles.data.length === 0 ? (
+              <Typography variant="body1" align="center" color="textSecondary" sx={{ padding: '40px 0' }}>
+                No hay datos disponibles.
+              </Typography>
+            ) : (
+              <DataTable
+                noHeader={true}
+                columns={columns}
+                data={redFiles.data}
+                customStyles={{
+                  table: {
+                    padding: '0'
+                  },
+                  tableWrapper: {
+                    padding: '10px'
+                  }
+                }}
+              />
+            )}
           </Grid>
+
           <Grid item xs={12} className="grid-item">
-            {/* <Pagination
-              data={redFiles}
-              handlePageChange={handlePageChange}
-              tableLimit={TABLE_LIMIT}
-              initialPage={currentPage}
-            /> */}
+            {!loading && redFiles && redFiles.data && redFiles.data.length > 0 && (
+              <Pagination
+                data={redFiles}
+                handlePageChange={handlePageChange}
+                tableLimit={TABLE_LIMIT}
+                initialPage={currentPage}
+              />
+            )}
           </Grid>
-          {/* <Grid item xs={12} className="grid-item" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+
+          <Grid item xs={12} className="grid-item" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <button onClick={downloadPdf}>
               <Download /> Descargar Cátalogo
             </button>
-          </Grid> */}
+          </Grid>
         </Grid>
       </section>
       <Footer />
